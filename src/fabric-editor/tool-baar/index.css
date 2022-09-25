@@ -1,0 +1,26 @@
+.toolbaar-container{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-bottom: 10px;
+    background: #fff;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 0px 5px 0px;
+}
+.editor-tool-btn{
+    background: white;
+    border-radius: 4px;
+    width: 25px;
+    height: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.editor-tool-btn:hover{
+    background: whitesmoke;
+}
+.center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

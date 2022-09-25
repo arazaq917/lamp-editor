@@ -1,0 +1,6 @@
+.editor-panel-container{
+    width: 80%;
+    background: #394754;
+    border-right: 1px solid var(--super-light-gray-2);
+
+}

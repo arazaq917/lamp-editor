@@ -1,0 +1,29 @@
+.editor-main-wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+.fabric-editor-container{
+    height: calc(100% - 80px);
+}
+.fabric-editor-pro{
+    width: 100%;
+    height: calc(100% - 22px - 10px); /*10px is padding*/
+}
+.canvas-main-wrapper{
+    width: 70%;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0px;
+}
+.canvas-editor-wrapper{
+    width: 75%;
+}
+.canvas-right-wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - 70px);
+}
