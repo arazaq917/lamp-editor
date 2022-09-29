@@ -1,28 +1,18 @@
 .editor-left-menu{
     width: 20%;
     display: flex;
-    justify-content: center;
-    background: #2a343e;
-}
-.left-tab-bar{
-    margin-top: 8px;
-    height: 80%;
-    display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: rgba(17,23,29,0.6) ;
 }
 .fab-icon-button{
-    color: #4fac9a;
-    background: #f5f8f8;
+    margin-top: 8px;
     cursor: pointer;
     padding: 4px 8px;
-    border-bottom: 1px solid var(--super-light-gray-2);
-    border-radius: 4px;
+    border-radius: 2px;
     text-align: center;
 }
 .fab-icon-button:hover{
-    /*border-color: brown;*/
-    color: #3c8878;
     background: #bababa;
 }
 .center-content{
