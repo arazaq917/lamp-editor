@@ -1,46 +1,52 @@
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {fabric} from 'fabric';
 import './index.css'
-import EditorPanels from '../../index'
 import {initCenteringGuidelines, initAligningGuidelines} from '../../../utils/object-snapping'
-import {drawObjectDimentions} from '../../../utils/utils'
+import {drawObjectDimentions, getCanvas} from '../../../utils/utils'
 import ToolBaar from "../../tool-baar/ToolBaar";
 import 'fabric-history';
 import clsx from "clsx";
-const {FabEditorLeft,FabEditorRight}=EditorPanels;
+import FabEditorLeft from '../left-panel/LeftPanel';
+import FabEditorRight from '../right-panel/RightPanel'
+import {useDispatch} from "react-redux";
+import {setCanvas} from "../../actions";
 
-let canvas,canvasVar;
+let canvas ,canvasVar;
 
 const FabEditor =()=>{
+    const dispatch = useDispatch()
     useEffect(() => {
         window.addEventListener('resize', function(e) {
             adjustCanvasDimensions();
         }, true);
-        inItCanvas();
+        canvas = getCanvas();
+        window.canvas = canvas;
+        dispatch(setCanvas(canvas));
+        canvas.renderAll()
     },[]);
 
-    const inItCanvas =()=>{
-        canvas = new fabric.Canvas('canvas',{
-            width:700,
-            height:500,
-            backgroundColor:'white'
-        })
-        window.canvas = canvas;
-        drawObjectDimentions(canvas)
-        adjustCanvasDimensions();
-
-        initCenteringGuidelines(canvas);
-        initAligningGuidelines(canvas);
-        canvas.on({
-            'object:added': objectAdded,
-            'selection:created': selectionCreated,
-            'selection:updated': selectionUpdated,
-            'object:moving': objectMoving,
-            'object:modified' : modifiedObject,
-            'after:render':afterRender,
-        })
-        canvas.renderAll();
-    }
+    // const inItCanvas =()=>{
+    //     let canvas = new fabric.Canvas('canvas',{
+    //         width:700,
+    //         height:500,
+    //         backgroundColor:'white'
+    //     })
+    //     window.canvas = canvas;
+    //     drawObjectDimentions(canvas)
+    //     adjustCanvasDimensions();
+    //
+    //     initCenteringGuidelines(canvas);
+    //     initAligningGuidelines(canvas);
+    //     canvas.on({
+    //         'object:added': objectAdded,
+    //         'selection:created': selectionCreated,
+    //         'selection:updated': selectionUpdated,
+    //         'object:moving': objectMoving,
+    //         'object:modified' : modifiedObject,
+    //         'after:render':afterRender,
+    //     })
+    //     canvas.renderAll();
+    // }
 /// expand with color, background etc.
     const afterRender =()=>{
     }
@@ -78,33 +84,24 @@ const FabEditor =()=>{
             canvas.renderAll();
         }
     }
-    const addText=(name)=>{
+    const addText=()=>{
         let text = new fabric.IText('Hello There',{
             left:200,
             top:200,
             fontSize:20,
-            fill:'orange',
+            fill:'black',
             originX:'center',
             originY:'center',
-            name
+            fontFamily: 'Roboto',
         })
         canvas.add(text);
+        canvas.setActiveObject(text)
         canvas.renderAll();
-    }
-    const addObjectToCanvas =(objectName)=>{
-        switch (objectName){
-            case 'simple-text':
-                addText('simple-text');
-                break;
-            default:
-                addText('simple-text');
-                break;
-        }
     }
     return (
         <div className="fabric-editor-container">
             <div className="editor-main-wrapper">
-                <FabEditorLeft addText={addObjectToCanvas}/>
+                <FabEditorLeft addText={addText}/>
                 <div className="canvas-editor-wrapper">
                     <ToolBaar canvas={canvasVar}/>
                     <div className="canvas-right-wrapper">

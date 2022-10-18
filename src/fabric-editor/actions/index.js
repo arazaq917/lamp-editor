@@ -4,3 +4,9 @@ export const setActivePanel = (key) => {
         key
     };
 };
+export const setCanvas = (nr) => {
+    return {
+        type: "SET_CANVAS",
+        canvas: nr
+    };
+};

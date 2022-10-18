@@ -743,4 +743,14 @@ export const drawObjectDimentions = (canvas) => {
     //     canvas.renderAll();
     // });
 }
-
+export const getCanvas=()=>{
+    const canvas = new fabric.Canvas("canvas", {
+        targetFindTolerance: 10,
+        selection: true,
+        preserveObjectStacking: true,
+        width:700,
+        height:500,
+        backgroundColor:'white'
+    });
+    return canvas;
+}
