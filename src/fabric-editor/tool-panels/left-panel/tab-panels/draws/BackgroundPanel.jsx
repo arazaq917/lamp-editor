@@ -17,6 +17,8 @@ const BackgroundPanel = () =>{
     // },[])
 
     const canvasBackgroundImage = (url) => {
+        if(canvas.backgroundColor !== 'White' || canvas.backgroundColor !== '#FFFFFF')
+            canvas.backgroundColor = 'White'
         import(`../../../../../assets/images/SportsImages/${url}.png`).then(srcSprite => {
             let img = new Image();
             img.onload = function () {
@@ -32,6 +34,7 @@ const BackgroundPanel = () =>{
         });
     }
     const canvasBackgroundColor = (color) =>{
+        if(canvas.backgroundImage) canvas.backgroundImage = '';
         console.log('color',color)
         canvas.setBackgroundColor(color)
         canvas.renderAll()
