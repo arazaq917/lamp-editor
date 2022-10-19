@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import './index.css'
+import fabric from 'fabric'
 import {useSelector} from "react-redux";
 import EditorButton from "../../../../customComponents/fab-button/EditorButton";
 import leftAlign from "../../../../../assets/images/bg.png";
@@ -15,8 +16,20 @@ const BackgroundPanel = () =>{
     //     console.log(CanvasBackgroundImages)
     // },[])
 
-    const canvasBackgroundImage = () =>{
-        canvas.setBackgroundColor({source: `${imageU}`}, canvas.renderAll.bind(canvas));
+    const canvasBackgroundImage = (url) => {
+        import(`../../../../../assets/images/SportsImages/${url}.png`).then(srcSprite => {
+            let img = new Image();
+            img.onload = function () {
+                canvas.setBackgroundImage(img.currentSrc, () => {
+                    canvas.requestRenderAll();
+                }, {
+                    scaleX: (canvas.width / canvas.getZoom()) / img.width,
+                    scaleY: (canvas.height / canvas.getZoom()) / img.height,
+                    crossOrigin: 'anonymous'
+                });
+            };
+            img.src = srcSprite.default;
+        });
     }
     const canvasBackgroundColor = (color) =>{
         console.log('color',color)
@@ -31,6 +44,37 @@ const BackgroundPanel = () =>{
     const onSelectBackgroundToGo = (background) => {
         console.log("background",background)
     }
+    let canvasBackgroundImages = [
+        {
+            imgUrl: "ballet",
+            class:"background_football"
+
+        },
+        {
+            imgUrl: "baseball",
+            class:"background_baseball"
+        },
+        {
+            imgUrl: "basketball",
+            class:"background_basketball"
+        },
+        {
+            imgUrl: "cycling",
+            class:"background_cycling"
+        },
+        {
+            imgUrl: "football",
+            class:"background_football"
+        },
+        {
+            imgUrl: "golf",
+            class:"background_golf"
+        },
+        {
+            imgUrl: "gymnastics",
+            class:"background_gymnastics"
+        },
+    ];
     return(
         <div className="background_panel_wrapper">
             <span className="formatted_title">Background Colors</span>
@@ -44,76 +88,11 @@ const BackgroundPanel = () =>{
             </div>
             <span className="formatted_title">Background Images</span>
             <div className="background_images_wrapper">
-                <div onClick={() => onSelectBackgroundToGo('football')} className={`lamp_background background_football`}/>
-                <div onClick={() => onSelectBackgroundToGo('baseball')} className={`lamp_background background_baseball`}/>
-                <div onClick={() => onSelectBackgroundToGo('basketball')} className={`lamp_background background_basketball`}/>
-                <div className={`lamp_background background_cycling`}/>
-                <div className={`lamp_background background_golf`} />
-                <div className={`lamp_background background_gymnastics`}/>
-                <div className={`lamp_background background_skiing`} />
-                <div className={`lamp_background background_horseback`}/>
-                <div className={`lamp_background background_skateboarding`}/>
-                <div className={`lamp_background background_skating`}/>
-                <div className={`lamp_background background_snowboarding`}/>
-                <div className={`lamp_background background_soccer`}/>
-                <div className={`lamp_background background_surfing`}/>
-                <div className={`lamp_background background_tennis`}/>
-                <div className={`lamp_background background_volleyball`}/>
+                {canvasBackgroundImages.map(m=> <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
+                )}
             </div>
         </div>
     )
 }
-// const CanvasBackgroundImages = [
-//     {
-//         imgUrl: "/assets/images/SportsImages/ballet.png",
-//     },
-//     {
-//         imgUrl: "/assets/images/SportsImages/baseball.png",
-//     },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/basketball.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/cycling.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/football.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/golf.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/gymnastics.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/horseback.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/skating.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/martial art.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/skateboarding.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/skiing.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/snowboarding.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/soccer.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/surfing.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/tennis.png",
-//     // },
-//     // {
-//     //     imgUrl: "../../../../../assets/images/SportsImages/volleyball.png",
-//     // },
-// ];
+
 export default BackgroundPanel
