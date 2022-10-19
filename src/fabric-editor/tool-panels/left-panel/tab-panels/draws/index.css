@@ -13,15 +13,12 @@
     color: #fff;
     background: #1c634d;
 }
-.backgroundImageBtn{
-    margin-right: 10px;
-    min-width: 140px;
-    font-size: 16px;
-    background: #2ecc8f;
-}
-.backgroundImageBtn:hover{
+.formatted_title{
     color: #fff;
-    background: #1c634d;
+    font-size: 18px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    padding: 5px;
+    margin: 20px 10px 20px 10px;
 }
 
 .background_panel_wrapper{
@@ -79,4 +76,113 @@
     margin-right: 4px;
     margin-bottom: 4px;
     border-radius: 5px;
+}
+
+.lamp_background {
+    width: calc(43% - 0px);
+    height:100px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-flex;
+    margin: 0px 16px 16px 0px;
+    cursor: pointer;
+}
+
+.background_images_wrapper{
+    overflow: auto;
+    padding: 10px;
+    overflow-y: auto;
+    height: 500px;
+}
+/* width */
+.background_images_wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.background_images_wrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+.background_images_wrapper::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+    visibility:hidden;
+}
+.background_images_wrapper:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
+}
+
+
+/* width */
+.background_images_wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.background_images_wrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+.background_images_wrapper::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+    visibility:hidden;
+}
+.background_images_wrapper:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
+}
+
+
+.background_football {
+    background-image: url(../../../../../assets/images/SportsImages/football.png);
+}
+.background_baseball {
+    background-image: url(../../../../../assets/images/SportsImages/baseball.png);
+}
+.background_basketball {
+    background-image: url(../../../../../assets/images/SportsImages/basketball.png);
+}
+.background_cycling {
+    background-image: url(../../../../../assets/images/SportsImages/cycling.png);
+}
+.background_golf {
+    background-image: url(../../../../../assets/images/SportsImages/golf.png);
+}
+.background_gymnastics {
+    background-image: url(../../../../../assets/images/SportsImages/gymnastics.png);
+}
+.background_skiing {
+    background-image: url(../../../../../assets/images/SportsImages/skiing.png);
+}
+.background_horseback {
+    background-image: url(../../../../../assets/images/SportsImages/horseback.png);
+}
+.background_skateboarding {
+    background-image: url(../../../../../assets/images/SportsImages/skateboarding.png);
+}
+.background_skating {
+    background-image: url(../../../../../assets/images/SportsImages/skating.png);
+}
+.background_snowboarding {
+    background-image: url(../../../../../assets/images/SportsImages/snowboarding.png);
+}
+.background_soccer {
+    background-image: url(../../../../../assets/images/SportsImages/soccer.png);
+}
+.background_surfing {
+    background-image: url(../../../../../assets/images/SportsImages/surfing.png);
+}
+.background_tennis {
+    background-image: url(../../../../../assets/images/SportsImages/tennis.png);
+}
+.background_volleyball {
+    background-image: url(../../../../../assets/images/SportsImages/volleyball.png);
 }
