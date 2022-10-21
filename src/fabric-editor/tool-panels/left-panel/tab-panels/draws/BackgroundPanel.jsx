@@ -91,7 +91,8 @@ const BackgroundPanel = () =>{
             </div>
             <span className="formatted_title">Background Images</span>
             <div className="background_images_wrapper">
-                {canvasBackgroundImages.map(m=> <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
+                {canvasBackgroundImages.map(m=>
+                    <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
                 )}
             </div>
         </div>

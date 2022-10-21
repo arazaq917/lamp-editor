@@ -5,14 +5,9 @@ import leftAlign from "../../assets/images/left.png";
 import rightAlign from "../../assets/images/right.png";
 import format from "../../assets/images/justify.png";
 import './index.css'
-import {Select, Tooltip} from 'antd';
 const ToolBaar =()=>{
-    const {Option} = Select;
-
     const canvas = useSelector(state => state.canvas)
     const objectStates = useSelector(state => state.canvasObjectStates)
-
-
     const [toggleBold, setToggleBold] = useState(false);
     const [toggleItalic, setToggleItalic] = useState(false);
     const [toggleUnderline, setToggleUnderline] = useState(false);
