@@ -5,7 +5,7 @@ import img1 from '../../../../../assets/images/bg.png'
 import img2 from '../../../../../assets/images/PNG Various/baby.png'
 
 const UploadFilePanel = () => {
-    const [imageData, setImageData] = useState([])
+    const [imageData, setImageData] = useState([img1, img2])
     const inputRef = useRef()
     const canvas = useSelector(state => state.canvas)
 

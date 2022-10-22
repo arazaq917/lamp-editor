@@ -26,4 +26,5 @@
     display: flex;
     justify-content: space-between;
     height: calc(100% - 70px);
+    background-color: rgb(249, 249, 249);
 }

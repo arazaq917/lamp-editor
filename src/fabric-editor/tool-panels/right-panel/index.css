@@ -1,9 +1,7 @@
 .editor-right-panel{
-    margin-top: -10px;
     width: 25%;
     display: flex;
     justify-content: center;
-    background-color: rgb(249, 249, 249);
+    background-color: #fff;
     border-left: 1px solid var(--super-light-gray-2);
-    /*border-top: 1px solid var(--super-light-gray-2);*/
 }
