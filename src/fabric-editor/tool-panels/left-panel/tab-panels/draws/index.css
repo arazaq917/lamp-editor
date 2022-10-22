@@ -63,6 +63,7 @@
     width: 50%;
     float: left;
     padding: 10px;
+    cursor: pointer;
 }
 .d_none{
     display: none !important;
