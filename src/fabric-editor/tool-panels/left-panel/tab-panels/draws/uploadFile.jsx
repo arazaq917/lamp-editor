@@ -16,6 +16,20 @@ const UploadFilePanel = () => {
         const reader = new FileReader();
         reader.readAsDataURL(uploadedIconData);
         reader.onload = (e)=> {
+            console.log(e.target.result)
+            var imgObj = new Image();
+            imgObj.src = e.target.result;
+            imgObj.onload = function () {
+                var image = new fabric.Image(imgObj);
+                image.set({
+                    scaleX:0.3,
+                    scaleY:0.3,
+                });
+                canvas.centerObject(image);
+                canvas.add(image);
+                canvas.renderAll();
+            }
+
             setImageData((prevData) => [
                 ...prevData,e.target.result
             ]);
