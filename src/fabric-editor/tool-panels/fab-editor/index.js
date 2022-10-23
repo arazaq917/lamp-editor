@@ -46,10 +46,9 @@ const FabEditor =()=>{
     }
     const selectionCreated = (e) => {
         console.log("event",e)
-        // debugger
-        // let object = e.target
-        // if(!object)return
-        // updateObjectsStates(object)
+        let object = e.target
+        if(!object)return
+        updateObjectsStates(object)
     }
     const selectionUpdated=(e)=>{
         // updateObjectsStates(e.target)
