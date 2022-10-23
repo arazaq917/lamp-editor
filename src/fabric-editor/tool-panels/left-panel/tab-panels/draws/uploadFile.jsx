@@ -20,8 +20,8 @@ const UploadFilePanel = () => {
             let imgObj = new Image();
             imgObj.src = e.target.result;
             imgObj.onload = function () {
-                var image = new fabric.Image(imgObj);
-                image.set({
+                var image = new fabric.Image(imgObj,{
+                    name: 'image',
                     scaleX:0.3,
                     scaleY:0.3,
                 });
@@ -35,17 +35,19 @@ const UploadFilePanel = () => {
         };
     }
     const addImage = (item)=>{
-        console.log(item)
         let imgObj = new Image();
         imgObj.src = item;
         imgObj.onload = function () {
-            var image = new fabric.Image(imgObj);
-            image.set({
+            var image = new fabric.Image(imgObj, {
+                originX: 'center',
+                originY: 'center',
+                name: "image",
                 scaleX:0.3,
                 scaleY:0.3,
             });
             canvas.centerObject(image);
             canvas.add(image);
+            canvas.setActiveObject(image)
             canvas.renderAll();
         }
     }

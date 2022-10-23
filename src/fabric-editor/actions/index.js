@@ -10,3 +10,9 @@ export const setCanvas = (nr) => {
         canvas: nr
     };
 };
+export const setObjectsState = (nr) => {
+    return {
+        type: "SET_OBJECTS_STATE",
+        action: nr
+    };
+};

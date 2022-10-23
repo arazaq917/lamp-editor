@@ -9,7 +9,7 @@ import clsx from "clsx";
 import FabEditorLeft from '../left-panel/LeftPanel';
 import FabEditorRight from '../right-panel/RightPanel'
 import {useDispatch} from "react-redux";
-import {setCanvas} from "../../actions";
+import {setCanvas, setObjectsState} from "../../actions";
 
 let canvas ,canvasVar;
 
@@ -22,34 +22,13 @@ const FabEditor =()=>{
         canvas = getCanvas();
         window.canvas = canvas;
         dispatch(setCanvas(canvas));
+        canvas.on({
+            'selection:created': selectionCreated,
+            'selection:updated': selectionUpdated,
+            'selection:cleared': selectionCleared,
+            })
         canvas.renderAll()
     },[]);
-
-    // const inItCanvas =()=>{
-    //     let canvas = new fabric.Canvas('canvas',{
-    //         width:700,
-    //         height:500,
-    //         backgroundColor:'white'
-    //     })
-    //     window.canvas = canvas;
-    //     drawObjectDimentions(canvas)
-    //     adjustCanvasDimensions();
-    //
-    //     initCenteringGuidelines(canvas);
-    //     initAligningGuidelines(canvas);
-    //     canvas.on({
-    //         'object:added': objectAdded,
-    //         'selection:created': selectionCreated,
-    //         'selection:updated': selectionUpdated,
-    //         'object:moving': objectMoving,
-    //         'object:modified' : modifiedObject,
-    //         'after:render':afterRender,
-    //     })
-    //     canvas.renderAll();
-    // }
-/// expand with color, background etc.
-    const afterRender =()=>{
-    }
 
     const adjustCanvasDimensions=()=>{
         let elHeight = 0, elWidth = 0;
@@ -65,30 +44,59 @@ const FabEditor =()=>{
         canvas.setHeight(height)
         canvas.renderAll();
     }
-    const objectAdded=(e)=>{
-    }
-    const selectionCreated=(e)=>{
+    const selectionCreated = (e) => {
+        console.log("event",e)
+        // debugger
+        // let object = e.target
+        // if(!object)return
+        // updateObjectsStates(object)
     }
     const selectionUpdated=(e)=>{
-
+        // updateObjectsStates(e.target)
     }
-    const modifiedObject=(e)=>{
-
+    const selectionCleared=(e)=>{
+        // updateObjectsStates({ name: "clear" })
     }
-    const objectMoving=(e)=>{
-        let obj = e.target;
-        if (!obj) return;
-        if (obj.left <= 0){
-            canvas.discardActiveObject();
-            obj.setPositionByOrigin({x:0,y:obj.getScaledHeight()},'left','top');
-            canvas.renderAll();
+    const updateObjectsStates = (object) => {
+        let obj;
+        if (object.name === "text") {
+            obj = {
+                image:false,
+                objectActive: true,
+                text: true,
+                activeSelection:false
+            }
+        } else if (object.name === "clear") {
+            obj = {
+                image:false,
+                objectActive: false,
+                text: false,
+                activeSelection:false
+            }
+        } else if (object.name === "image") {
+            obj = {
+                image:true,
+                objectActive: true,
+                text: false,
+                activeSelection:false
+            }
         }
+        else {
+            obj = {
+                image:false,
+                objectActive: true,
+                text: false,
+                activeSelection:false
+            }
+        }
+        dispatch(setObjectsState(obj))
     }
-    const addText=()=>{
+    const addText = () => {
         let text = new fabric.IText('Hello There',{
             left:200,
             top:200,
             fontSize:20,
+            name: 'text',
             fill:'black',
             originX:'center',
             originY:'center',
