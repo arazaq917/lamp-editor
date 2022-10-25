@@ -45,17 +45,16 @@ const FabEditor =()=>{
         canvas.renderAll();
     }
     const selectionCreated = (e) => {
-        console.log("event",e)
-        // debugger
-        // let object = e.target
-        // if(!object)return
-        // updateObjectsStates(object)
+        debugger
+        let object = e.target
+        if(!object)return
+        updateObjectsStates(object)
     }
     const selectionUpdated=(e)=>{
-        // updateObjectsStates(e.target)
+        updateObjectsStates(e.target)
     }
     const selectionCleared=(e)=>{
-        // updateObjectsStates({ name: "clear" })
+        updateObjectsStates({ name: "clear" })
     }
     const updateObjectsStates = (object) => {
         let obj;

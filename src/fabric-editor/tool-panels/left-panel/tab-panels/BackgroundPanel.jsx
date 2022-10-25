@@ -2,9 +2,6 @@ import React, {useEffect, useState} from "react";
 import './index.css'
 import fabric from 'fabric'
 import {useSelector} from "react-redux";
-import EditorButton from "../../../../customComponents/fab-button/EditorButton";
-import leftAlign from "../../../../../assets/images/bg.png";
-import imageU from "../../../../../assets/images/SportsImages/baseball.png"
 
 let COLORS = ["#003E60", "#35ACDD", "#F7CF00", "#C40E12", "#fff", "#23803C"]
 
@@ -19,7 +16,7 @@ const BackgroundPanel = () =>{
     const canvasBackgroundImage = (url) => {
         if(canvas.backgroundColor !== 'White' || canvas.backgroundColor !== '#FFFFFF')
             canvas.backgroundColor = 'White'
-        import(`../../../../../assets/images/SportsImages/${url}.png`).then(srcSprite => {
+        import(`../../../../assets/images/SportsImages/${url}.png`).then(srcSprite => {
             let img = new Image();
             img.onload = function () {
                 canvas.setBackgroundImage(img.currentSrc, () => {

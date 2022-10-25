@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import EditorButton from "../../../../customComponents/fab-button/EditorButton";
+import EditorButton from "../../../customComponents/fab-button/EditorButton";
 import './index.css'
 const TextPanel = ({addText}) =>{
     return(

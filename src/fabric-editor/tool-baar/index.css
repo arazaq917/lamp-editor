@@ -19,22 +19,6 @@
 .editor-tool-btn:hover{
     background: whitesmoke;
 }
-.buttons_style{
-    font-family: "Times New Roman";
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    height: 33px;
-    width: 33px;
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.bg_purple {
-    background-color: #6E6DD3 !important;
-}
 .italic_btn{
     font-style: italic;
 }
@@ -53,21 +37,6 @@
 .pg__form_input{
     border: 2px solid #ccc !important;
     border-radius: 4px !important;
-}
-.buttons_style{
-    font-family: "Times New Roman";
-    font-weight: bold;
-    color: white;
-    background-color: #6E6DD3;
-    font-size: 1.8vw;
-    border: none;
-    border-radius: 5px;
-    height: 30px;
-    width: 30px;
-    margin-left: 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .options_style{
     border: none;
@@ -89,10 +58,6 @@
 }
 .ant-input {
     max-width: 80% !important;
-}
-.text_properties_wrapper{
-    display: flex;
-    align-items: center;
 }
 .fontSize_option{
     width: 100px !important;

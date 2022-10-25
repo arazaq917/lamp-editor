@@ -1,8 +1,8 @@
 import React, {useRef, useState} from "react";
 import './index.css'
 import {useSelector} from "react-redux";
-import img1 from '../../../../../assets/images/bg.png'
-import img2 from '../../../../../assets/images/PNG Various/baby.png'
+import img1 from '../../../../assets/images/bg.png'
+import img2 from '../../../../assets/images/PNG Various/baby.png'
 
 const UploadFilePanel = () => {
     const [imageData, setImageData] = useState([img1, img2])
