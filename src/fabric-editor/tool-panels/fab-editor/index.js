@@ -45,7 +45,7 @@ const FabEditor =()=>{
         canvas.renderAll();
     }
     const selectionCreated = (e) => {
-        debugger
+        console.log("event",e)
         let object = e.target
         if(!object)return
         updateObjectsStates(object)
