@@ -235,7 +235,7 @@ const TextProperties = () => {
     }
 
     return (
-        <div className={`text_properties_wrapper`}>
+        <div className={`properties_wrapper`}>
                 <Container>
                     <Row>
                         <Col>

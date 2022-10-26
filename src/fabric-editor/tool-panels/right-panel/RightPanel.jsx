@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import './index.css'
 import {useSelector} from "react-redux";
 import TextProperties from "./TextProperties";
+import ImageProperties from "./ImageProperties";
+import LampPreview from "./LampPreview";
 
 const RightPanel =()=>{
     const objectState = useSelector(state => state.canvasObjectStates)
@@ -9,16 +11,19 @@ const RightPanel =()=>{
         console.log("objectState",objectState)
     },[objectState])
     return (
-        <aside className="editor-right-panel">
+        <div className="editor-right-panel">
             {
                 objectState.text &&
                     <TextProperties/>
             }
             {
                 objectState.image &&
-                    <div>This is Image Properties</div>
+                    <ImageProperties/>
             }
-        </aside>
+            <div className="lamp_preview">
+                <LampPreview/>
+            </div>
+        </div>
     );
 }
 

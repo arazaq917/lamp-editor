@@ -5,7 +5,12 @@
     border-left: 1px solid var(--super-light-gray-2);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
-
+.lamp_preview{
+    height: 200px;
+    width: 90%;
+    position: absolute;
+    bottom: 0px;
+}
 .buttons_style{
     font-family: "Times New Roman";
     font-weight: bold;
@@ -22,12 +27,12 @@
 .bg_purple {
     background-color: #6E6DD3 !important;
 }
-.text_properties_wrapper > .container > .row{
+.properties_wrapper > .container > .row{
     margin-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #858585;
 }
-.text_properties_wrapper > .container > .row > .col{
+.properties_wrapper > .container > .row > .col{
     display: flex;
     align-items: center;
 }
@@ -54,9 +59,11 @@
 .lamp_text_alignment{
     display: flex;
 }
-.lamp_text_family{
-
+.rotate_props, .scale_props{
+    display: flex;
 }
-.lamp_text_size{
-
+.border_icon{
+    border: 1px solid black;
+    padding: 2px 4px;
+    margin-right: 10px;
 }
