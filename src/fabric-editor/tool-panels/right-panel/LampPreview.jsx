@@ -3,14 +3,14 @@ import lamp from '../../../assets/images/bg.png'
 
 const LampPreview = (lampSvg)=>{
     return(
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="280px" height="180px" viewBox="0 0 1280 720">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">
             <defs>
                 <pattern id="img1"   x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
                     <image href="https://www.allthingsdogs.com/wp-content/uploads/2019/12/Red-Husky-Feature-678x381.jpg" x="0" y="0" width="385" height="465" preserveAspectRatio="xMidYMin slice" />
                 </pattern>
             </defs>
             <defs>
-                <image id="lamp_jpg" x="0" y="0" width="120" height="120" xlinkHref={lamp}/>
+                <image id="lamp_jpg" x="0" y="0" width="1280" height="720" xlinkHref={lamp}/>
 
                 <g id="Layer2_0_FILL">
                     <path fill="#FAFAFA" stroke="none" d="
