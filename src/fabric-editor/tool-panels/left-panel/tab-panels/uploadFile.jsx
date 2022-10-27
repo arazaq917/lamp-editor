@@ -42,9 +42,9 @@ const UploadFilePanel = () => {
                 originX: 'center',
                 originY: 'center',
                 name: "image",
-                scaleX:0.3,
-                scaleY:0.3,
             });
+            image.scaleToHeight(400)
+            image.scaleToWidth(400)
             canvas.centerObject(image);
             canvas.add(image);
             canvas.setActiveObject(image)
