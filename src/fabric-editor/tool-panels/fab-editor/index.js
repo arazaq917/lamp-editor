@@ -9,8 +9,8 @@ import clsx from "clsx";
 import FabEditorLeft from '../left-panel/LeftPanel';
 import FabEditorRight from '../right-panel/RightPanel'
 import {useDispatch} from "react-redux";
-import {setCanvas, setObjectsState} from "../../actions";
-import {createBounds} from "../../../utils/bounds";
+import {setCanvas, setImages, setObjectsState} from "../../actions";
+import {captureShots, createBounds} from "../../../utils/bounds";
 
 let canvas ,canvasVar;
 
@@ -27,11 +27,16 @@ const FabEditor =()=>{
             'selection:created': selectionCreated,
             'selection:updated': selectionUpdated,
             'selection:cleared': selectionCleared,
+            'object:added':objectAdded,
+            'object:modified':objectModified
             })
         createBounds(canvas)
         canvas.renderAll()
     },[]);
-
+    const updateImages = (images)=>{
+        console.log(images)
+        dispatch(setImages(images))
+    }
     const adjustCanvasDimensions=()=>{
         let elHeight = 0, elWidth = 0;
         document.querySelectorAll('div').forEach((el)=>{
@@ -46,8 +51,23 @@ const FabEditor =()=>{
         canvas.setHeight(height)
         canvas.renderAll();
     }
+    const objectModified=(e)=>{
+        console.log('object modified')
+        if(e.target){
+            captureShots(canvas,updateImages)
+        }
+    }
+    const objectAdded = (e)=>{
+        if(e.target){
+            if(!e.target.name.includes('rect')){
+                canvas.sendToBack(e.target);
+                canvas.renderAll();
+            }
+        }
+    }
     const selectionCreated = (e) => {
         console.log("event",e)
+        captureShots(canvas,updateImages)
         let object = e.target
         if(!object)return
         updateObjectsStates(object)

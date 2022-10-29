@@ -3,11 +3,13 @@ import activePanel from "./panelState";
 import canvas from "./canvasReducer";
 import background from "./background";
 import canvasObjectStates from "./objectStates";
+import images from "./images"
 const allReducer = combineReducers({
     activePanel:activePanel,
     canvas:canvas,
     background:background,
-    canvasObjectStates:canvasObjectStates
+    canvasObjectStates:canvasObjectStates,
+    images:images
 })
 
 export default allReducer;

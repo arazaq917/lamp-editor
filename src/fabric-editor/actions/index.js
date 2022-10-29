@@ -10,6 +10,12 @@ export const setCanvas = (nr) => {
         canvas: nr
     };
 };
+export const setImages = (nr)=>{
+    return {
+        type: "SET_IMAGE",
+        image:nr
+    }
+}
 export const setObjectsState = (nr) => {
     return {
         type: "SET_OBJECTS_STATE",

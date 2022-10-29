@@ -100,3 +100,27 @@ export  const createBounds = (canvas)=>{
 
     canvas.renderAll()
 }
+export const captureShots = (canvas,updateImages) =>{
+    let imagesArr = []
+    canvas._objects.forEach(e=>{
+        if(e.name === 'rect1' || e.name === 'rect2' || e.name === 'rect3' || e.name === 'rect4'){
+            e.visible = false;
+            let cropped = new Image();
+            cropped.src = canvas.toDataURL({
+                left: e.left,
+                top: e.top-(e.height/2),
+                width: e.width,
+                height: e.height
+            });
+            cropped.onload = function() {
+                imagesArr.push({
+                    name:e.name,
+                    url:cropped.src
+                })
+                console.log(cropped.src)
+                canvas.renderAll();
+            };
+        }
+    })
+    // updateImages(imagesArr)
+};
