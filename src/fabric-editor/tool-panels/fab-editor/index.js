@@ -10,6 +10,7 @@ import FabEditorLeft from '../left-panel/LeftPanel';
 import FabEditorRight from '../right-panel/RightPanel'
 import {useDispatch} from "react-redux";
 import {setCanvas, setObjectsState} from "../../actions";
+import {createBounds} from "../../../utils/bounds";
 
 let canvas ,canvasVar;
 
@@ -27,6 +28,7 @@ const FabEditor =()=>{
             'selection:updated': selectionUpdated,
             'selection:cleared': selectionCleared,
             })
+        createBounds(canvas)
         canvas.renderAll()
     },[]);
 
