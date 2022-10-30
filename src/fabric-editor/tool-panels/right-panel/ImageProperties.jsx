@@ -113,7 +113,7 @@ const ImageProperties = () => {
                         </div>
                     </Col>
                     <Col>
-                        <span className="format_title">Fill</span>
+                        <span className="format_title">Fit</span>
                     </Col>
                     <Col>
                         <div className="border_icon flip_icon" onClick={fitObject}>
