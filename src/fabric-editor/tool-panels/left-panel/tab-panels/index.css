@@ -157,47 +157,99 @@
 
 
 .background_football {
-    background-image: url(../../../../assets/images/SportsImages/football.png);
+    background-image: url(../../../../assets/images/SportsImages/football.jpg);
 }
 .background_baseball {
-    background-image: url(../../../../assets/images/SportsImages/baseball.png);
+    background-image: url(../../../../assets/images/SportsImages/baseball.jpg);
 }
 .background_basketball {
-    background-image: url(../../../../assets/images/SportsImages/basketball.png);
+    background-image: url(../../../../assets/images/SportsImages/basketball.jpg);
 }
 .background_cycling {
-    background-image: url(../../../../assets/images/SportsImages/cycling.png);
+    background-image: url(../../../../assets/images/SportsImages/cycling.jpg);
 }
 .background_golf {
-    background-image: url(../../../../assets/images/SportsImages/golf.png);
+    background-image: url(../../../../assets/images/SportsImages/golf.jpg);
 }
 .background_gymnastics {
-    background-image: url(../../../../assets/images/SportsImages/gymnastics.png);
+    background-image: url(../../../../assets/images/SportsImages/gymnastics.jpg);
 }
 .background_skiing {
-    background-image: url(../../../../assets/images/SportsImages/skiing.png);
+    background-image: url(../../../../assets/images/SportsImages/skiing.jpg);
 }
 .background_horseback {
-    background-image: url(../../../../assets/images/SportsImages/horseback.png);
+    background-image: url(../../../../assets/images/SportsImages/horseback.jpg);
 }
 .background_skateboarding {
-    background-image: url(../../../../assets/images/SportsImages/skateboarding.png);
+    background-image: url(../../../../assets/images/SportsImages/skateboarding.jpg);
 }
 .background_skating {
-    background-image: url(../../../../assets/images/SportsImages/skating.png);
+    background-image: url(../../../../assets/images/SportsImages/skating.jpg);
 }
 .background_snowboarding {
-    background-image: url(../../../../assets/images/SportsImages/snowboarding.png);
+    background-image: url(../../../../assets/images/SportsImages/snowboarding.jpg);
 }
 .background_soccer {
-    background-image: url(../../../../assets/images/SportsImages/soccer.png);
+    background-image: url(../../../../assets/images/SportsImages/soccer.jpg);
 }
 .background_surfing {
-    background-image: url(../../../../assets/images/SportsImages/surfing.png);
+    background-image: url(../../../../assets/images/SportsImages/surfing.jpg);
 }
 .background_tennis {
-    background-image: url(../../../../assets/images/SportsImages/tennis.png);
+    background-image: url(../../../../assets/images/SportsImages/tennis.jpg);
 }
 .background_volleyball {
-    background-image: url(../../../../assets/images/SportsImages/volleyball.png);
+    background-image: url(../../../../assets/images/SportsImages/volleyball.jpg);
+}
+
+.background_Avocado {
+    background-image: url(../../../../assets/images/PNGVarious/Avocado.jpg);
+}
+.background_baby {
+    background-image: url(../../../../assets/images/PNGVarious/baby.jpg);
+}
+.background_Cactae {
+    background-image: url(../../../../assets/images/PNGVarious/Cactae.jpg);
+}
+.background_cats {
+    background-image: url(../../../../assets/images/PNGVarious/cats.jpg);
+}
+.background_cellos {
+    background-image: url(../../../../assets/images/PNGVarious/cellos.jpg);
+}
+.background_Cherries {
+    background-image: url(../../../../assets/images/PNGVarious/Cherries.jpg);
+}
+.background_Chocolate {
+    background-image: url(../../../../assets/images/PNGVarious/Chocolate.jpg);
+}
+.background_dad {
+    background-image: url(../../../../assets/images/PNGVarious/dad.jpg);
+}
+.background_dogs {
+    background-image: url(../../../../assets/images/PNGVarious/dogs.jpg);
+}
+.background_flying {
+    background-image: url(../../../../assets/images/PNGVarious/flying.jpg);
+}
+.background_itsaboy {
+    background-image: url(../../../../assets/images/PNGVarious/itsaboy.jpg);
+}
+.background_itsagirl {
+    background-image: url(../../../../assets/images/PNGVarious/itsagirl.jpg);
+}
+.background_Lightning {
+    background-image: url(../../../../assets/images/PNGVarious/Lightning.jpg);
+}
+.background_Musical {
+    background-image: url(../../../../assets/images/PNGVarious/Musical.jpg);
+}
+.background_robots {
+    background-image: url(../../../../assets/images/PNGVarious/robots.jpg);
+}
+.background_skulbunny {
+    background-image: url(../../../../assets/images/PNGVarious/skulbunny.jpg);
+}
+.background_tvs {
+    background-image: url(../../../../assets/images/PNGVarious/tvs.jpg);
 }

@@ -1,22 +1,18 @@
 import React, {useEffect, useState} from "react";
 import './index.css'
-import fabric from 'fabric'
 import {useSelector} from "react-redux";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from 'react-bootstrap/Tab';
 
 let COLORS = ["#003E60", "#35ACDD", "#F7CF00", "#C40E12", "#fff", "#23803C"]
 
 const BackgroundPanel = () =>{
     const canvas = useSelector(state => state.canvas)
-    const [bgImages, setBgImages] = useState([])
-    // useEffect(()=>{
-    //     setBgImages(CanvasBackgroundImages)
-    //     console.log(CanvasBackgroundImages)
-    // },[])
 
     const canvasBackgroundImage = (url) => {
         if(canvas.backgroundColor !== 'White' || canvas.backgroundColor !== '#FFFFFF')
             canvas.backgroundColor = 'White'
-        import(`../../../../assets/images/SportsImages/${url}.png`).then(srcSprite => {
+        import(`../../../../assets/images/SportsImages/largeImages/${url}.png`).then(srcSprite => {
             let img = new Image();
             img.onload = function () {
                 canvas.setBackgroundImage(img.currentSrc, () => {
@@ -32,23 +28,17 @@ const BackgroundPanel = () =>{
     }
     const canvasBackgroundColor = (color) =>{
         if(canvas.backgroundImage) canvas.backgroundImage = '';
-        console.log('color',color)
         canvas.setBackgroundColor(color)
         canvas.renderAll()
     }
     const newColor = (e) =>{
-        console.log("target",e.target.value)
         canvas.setBackgroundColor(e.target.value)
         canvas.renderAll()
-    }
-    const onSelectBackgroundToGo = (background) => {
-        console.log("background",background)
     }
     let canvasBackgroundImages = [
         {
             imgUrl: "ballet",
             class:"background_football"
-
         },
         {
             imgUrl: "baseball",
@@ -74,6 +64,116 @@ const BackgroundPanel = () =>{
             imgUrl: "gymnastics",
             class:"background_gymnastics"
         },
+        {
+            imgUrl: "skiing",
+            class:"background_skiing"
+        },
+        {
+            imgUrl: "horseback",
+            class:"background_horseback"
+        },
+        {
+            imgUrl: "skateboarding",
+            class:"background_skateboarding"
+        },
+        {
+            imgUrl: "skating",
+            class:"background_skating"
+        },
+        {
+            imgUrl: "snowboarding",
+            class:"background_snowboarding"
+        },
+        {
+            imgUrl: "golf",
+            class:"background_golf"
+        },
+        {
+            imgUrl: "soccer",
+            class:"background_soccer"
+        },
+        {
+            imgUrl: "surfing",
+            class:"background_surfing"
+        },
+        {
+            imgUrl: "tennis",
+            class:"background_tennis"
+        },
+        {
+            imgUrl: "volleyball",
+            class:"background_volleyball"
+        }
+    ];
+    let canvasBackgroundImages1 = [
+        {
+            imgUrl: "Avocado",
+            class:"background_Avocado"
+        },
+        {
+            imgUrl: "baby",
+            class:"background_baby"
+        },
+        {
+            imgUrl: "Cactae",
+            class:"background_Cactae"
+        },
+        {
+            imgUrl: "cats",
+            class:"background_cats"
+        },
+        {
+            imgUrl: "cellos",
+            class:"background_cellos"
+        },
+        {
+            imgUrl: "Cherries",
+            class:"background_Cherries"
+        },
+        {
+            imgUrl: "Chocolate",
+            class:"background_Chocolate"
+        },
+        {
+            imgUrl: "dad",
+            class:"background_dad"
+        },
+        {
+            imgUrl: "dogs",
+            class:"background_dogs"
+        },
+        {
+            imgUrl: "flying",
+            class:"background_flying"
+        },
+        {
+            imgUrl: "itsaboy",
+            class:"background_itsaboy"
+        },
+        {
+            imgUrl: "itsagirl",
+            class:"background_itsagirl"
+        },
+        {
+            imgUrl: "Lightning",
+            class:"background_Lightning"
+        },
+        {
+            imgUrl: "Musical",
+            class:"background_Musical"
+        },
+        {
+            imgUrl: "robots",
+            class:"background_robots"
+        },
+        {
+            imgUrl: "skulbunny",
+            class:"background_skulbunny"
+        },
+        {
+            imgUrl: "tvs",
+            class:"background_tvs"
+        },
     ];
     return(
         <div className="background_panel_wrapper">
@@ -88,9 +188,23 @@ const BackgroundPanel = () =>{
             </div>
             <span className="formatted_title">Background Images</span>
             <div className="background_images_wrapper">
-                {canvasBackgroundImages.map(m=>
-                    <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
-                )}
+                <Tabs
+                    defaultActiveKey="Sports"
+                    id="fill-tab-example"
+                    className="mb-3"
+                    fill
+                >
+                    <Tab eventKey="Sports" title="Sports">
+                        {canvasBackgroundImages.map(m=>
+                            <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
+                        )}
+                    </Tab>
+                    <Tab eventKey="Various" title="Various">
+                        {canvasBackgroundImages1.map(m=>
+                            <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
+                        )}
+                    </Tab>
+                </Tabs>
             </div>
         </div>
     )
