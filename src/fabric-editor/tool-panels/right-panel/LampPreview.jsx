@@ -1,13 +1,28 @@
 import React, {useEffect} from 'react';
-import lamp from '../../../assets/images/bg.png'
+import {useSelector} from "react-redux";
+let modifiedImages;
+const LampPreview = ({imagesc})=>{
+    const images = useSelector(state => state.images)
+    let getImageWithIndex = ()=>{
+        let img1 = images.find(f=>f.name === 'rect1')
+        let img2 = images.find(f=>f.name === 'rect3')
+        let img3 = images.find(f=>f.name === 'rect2')
+        let img4 = images.find(f=>f.name === 'rect4')
+        if(!img1 || !img2 || !img3 || !img4){
+            return [{name:'',url:''},{name:'',url:''},{name:'',url:''},{name:'',url:''}]
+        }
+        else{return [img1,img2,img3,img4]}
+    }
+    useEffect(()=>{
+        console.log(  getImageWithIndex())
+    },[images])
 
-const LampPreview = (lampSvg)=>{
     return(
-
+<>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">
             <defs>
                 <pattern id="img1"   x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
-                    <image href="https://www.allthingsdogs.com/wp-content/uploads/2019/12/Red-Husky-Feature-678x381.jpg" x="0" y="0" width="385" height="465" preserveAspectRatio="xMidYMin slice" />
+                    <image href={images.length?getImageWithIndex()[0].url:''} x="0" y="0" width="385" height="465" preserveAspectRatio="xMidYMin slice" />
                 </pattern>
             </defs>
             <defs>
@@ -257,7 +272,7 @@ L 460.9 558.65 Z"/>
             </g>
         </svg>
 
-
+</>
     )
 }
 export default LampPreview;

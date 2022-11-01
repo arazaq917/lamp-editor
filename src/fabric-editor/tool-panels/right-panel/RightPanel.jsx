@@ -7,9 +7,11 @@ import LampPreview from "./LampPreview";
 
 const RightPanel =()=>{
     const objectState = useSelector(state => state.canvasObjectStates)
+    const images = useSelector(state => state.images)
     useEffect(()=>{
         console.log("objectState",objectState)
-    },[objectState])
+        console.log('images',images)
+    },[objectState,images])
     return (
         <div className="editor-right-panel">
             {
@@ -21,7 +23,7 @@ const RightPanel =()=>{
                     <ImageProperties/>
             }
             <div className="lamp_preview">
-                <LampPreview/>
+                <LampPreview images={images}/>
             </div>
         </div>
     );

@@ -102,26 +102,35 @@ export  const createBounds = (canvas)=>{
 }
 export const captureShots = (canvas,updateImages) =>{
     let imagesArr = []
-    canvas._objects.forEach(e=>{
-        if(e.name === 'rect1' || e.name === 'rect2' || e.name === 'rect3' || e.name === 'rect4'){
-            e.visible = false;
-            let cropped = new Image();
-            cropped.src = canvas.toDataURL({
-                left: e.left,
-                top: e.top-(e.height/2),
-                width: e.width,
-                height: e.height
-            });
-            cropped.onload = function() {
-                imagesArr.push({
-                    name:e.name,
-                    url:cropped.src
-                })
-                console.log(cropped.src)
-                updateImages(cropped.src)
-                canvas.renderAll();
-            };
-        }
+    let promises = []
+    for(let i=0;i<canvas._objects.length;i++){
+        promises[i] = new Promise(resolve => {
+            let e = canvas._objects[i]
+            if(e.name === 'rect1' || e.name === 'rect2' || e.name === 'rect3' || e.name === 'rect4'){
+                e.visible = false;
+                let cropped = new Image();
+                cropped.src = canvas.toDataURL({
+                    left: e.left,
+                    top: e.top-(e.height/2),
+                    width: e.width,
+                    height: e.height
+                });
+                cropped.onload = function() {
+                    imagesArr.push({
+                        name:e.name,
+                        url:cropped.src
+                    })
+                    resolve('resolved')
+                };
+            }
+            else{
+                resolve('resolved')
+            }
+        })
+    }
+    Promise.all(promises).then(value=>{
+        updateImages(imagesArr);
+        canvas.renderAll()
     })
     // updateImages(imagesArr)
 };

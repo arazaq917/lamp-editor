@@ -34,8 +34,12 @@ const FabEditor =()=>{
         canvas.renderAll()
     },[]);
     const updateImages = (images)=>{
-        console.log(images)
-        dispatch(setImages(images))
+        console.log(images);
+        let img1 = images.find(f=>f.name === 'rect1')
+        let img2 = images.find(f=>f.name === 'rect3')
+        let img3 = images.find(f=>f.name === 'rect2')
+        let img4 = images.find(f=>f.name === 'rect4')
+        dispatch(setImages([img1,img2,img3,img4]))
     }
     const adjustCanvasDimensions=()=>{
         let elHeight = 0, elWidth = 0;
