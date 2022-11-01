@@ -6,7 +6,7 @@ export  const createBounds = (canvas)=>{
         top: 0,
         name:'wrapperRect',
         width: canvas.width,
-        height: canvas.height-(canvas.height/3),
+        height: canvas.height-(canvas.height/2),
         fill:'rgba(0, 0, 0, 0.78)',
         selectable:false,
         stroke:'transparent',
@@ -20,7 +20,7 @@ export  const createBounds = (canvas)=>{
         top: canvas.height,
         name:'wrapperRect',
         width: canvas.width,
-        height: canvas.height-(canvas.height/3),
+        height: canvas.height-(canvas.height/2),
         fill:'rgba(0, 0, 0, 0.78)',
         selectable:false,
         stroke:'transparent',
@@ -34,7 +34,7 @@ export  const createBounds = (canvas)=>{
         top: canvas.height/2,
         name:'rect1',
         width: canvas.width/4,
-        height: canvas.height/3,
+        height: canvas.height/2,
         visible:false,
         fill:'transparent',
         selectable:false,
@@ -48,7 +48,7 @@ export  const createBounds = (canvas)=>{
         left: rect1.width,
         top: canvas.height/2,
         width: canvas.width/4,
-        height: canvas.height/3,
+        height: canvas.height/2,
         name:'rect2',
         visible:false,
         fill:'transparent',
@@ -63,7 +63,7 @@ export  const createBounds = (canvas)=>{
         left: rect2.width+rect2.left,
         top: canvas.height/2,
         width: canvas.width/4,
-        height: canvas.height/3,
+        height: canvas.height/2,
         name:'rect3',
         fill:'transparent',
         visible:false,
@@ -79,7 +79,7 @@ export  const createBounds = (canvas)=>{
         top: canvas.height/2,
         width: canvas.width/4,
         name:'rect4',
-        height: canvas.height/3,
+        height: canvas.height/2,
         fill:'transparent',
         visible:false,
         selectable:false,
@@ -118,6 +118,7 @@ export const captureShots = (canvas,updateImages) =>{
                     url:cropped.src
                 })
                 console.log(cropped.src)
+                updateImages(cropped.src)
                 canvas.renderAll();
             };
         }
