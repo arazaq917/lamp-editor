@@ -87,6 +87,12 @@
     border: 2px solid #002663;
     border-radius: 2px;
 }
+
+.canvas-tools{
+    margin: 5px;
+    padding: 5px;
+}
+
 @media(max-width: 992px) {
     .buttons_style{
         font-size: 3.3vw !important;
