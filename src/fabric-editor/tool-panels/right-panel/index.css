@@ -8,9 +8,8 @@
 .lamp_preview{
     border: 2px solid black;
     height: 200px;
-    position: absolute;
+    position: fixed;
     bottom: 30px;
-    right: 15px;
 }
 .buttons_style{
     font-family: "Times New Roman";
