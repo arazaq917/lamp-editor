@@ -1,19 +1,25 @@
 import React, {useEffect} from 'react';
 import {useSelector} from "react-redux";
+
 let modifiedImages;
-const LampPreviewLeft = ()=>{
+const LampPreviewLeft = () => {
     const images = useSelector(state => state.images)
-    return(
-<>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">
-            <defs>
-                <pattern id="img1"   x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
-                    <image href={images.length?images[1].url:''} x="0" y="0" width="385" height="465" preserveAspectRatio="none" />
-                </pattern>
-            </defs>
-            <defs>
-                <g id="Layer3_0_FILL">
-                    <path fill="#1F1D1A" stroke="none" d="
+    useEffect(()=>{
+        console.log("LampPreviewLeft",images)
+    },[images])
+    return (
+        <>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink"
+                 preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">
+                <defs>
+                    <pattern id="img1" x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
+                        <image href={images.length ? images[1].url : ''} x="0" y="0" width="385" height="465"
+                               preserveAspectRatio="none"/>
+                    </pattern>
+                </defs>
+                <defs>
+                    <g id="Layer3_0_FILL">
+                        <path fill="#1F1D1A" stroke="none" d="
 M 492.55 630
 Q 491.95 629.95 491.3 630.15 483.25 642.85 477.6 655.2 476.05 671.1 489.9 661.75 496.8 651.25 502.55 636.8 502.8 635.35 501.7 633.9 498.65 633.5 495.9 631.95 495.8 632 495.7 632.05 495.55 632.05 495.45 632.05 494.9 632 494.8 631.85 494.45 631.1 493.65 630.7 493.55 630.6 493.55 630.4
 L 492.55 630
@@ -47,7 +53,7 @@ Q 647.95 632.25 648.15 631.5 648.15 631.35 648.15 631.15
 L 648.35 630.8
 Q 648.25 630.7 648.3 630.6 648.35 630.35 648.3 630.25 647.95 628.2 647.9 626.2 647.9 625.9 648 625.65 647.35 623 647.7 619.85 648 617.3 648.15 614.75 649.45 617.05 649.3 619.9 649.25 620.35 649.25 620.8 Z"/>
 
-                    <path fill="#D5D5D2" stroke="none" d="
+                        <path fill="#D5D5D2" stroke="none" d="
 M 481.35 653.7
 L 481.45 654.6
 Q 481.45 654.5 481.45 654.4 481.5 654.1 481.35 653.7
@@ -73,7 +79,7 @@ Q 648.15 631.35 648.15 631.5 647.95 632.25 647.7 633.1
 L 648.3 634.4 648 633.95
 Q 648.4 634.85 649.25 635.15 649.4 634.95 649.35 634.65 648.9 631.75 649.1 628.6 649.35 625.8 649.15 623.05 649.25 623.05 649.25 622.75 Z"/>
 
-                    <path fill="#F1F1E7" stroke="none" d="
+                        <path fill="#F1F1E7" stroke="none" d="
 M 521.3 585.85
 L 525.6 578.45 525.6 577.5 526.35 575.55
 Q 526.9 574.6 527.3 573.8 528.1 572.1 528.7 570.55
@@ -110,7 +116,7 @@ L 650.9 564.85 650.5 564.25 650.3 562.65
 Q 650.35 561.75 650.35 561.1 650.25 559.6 650.1 558.3
 L 650.5 557.25 650.35 556.7 650.3 555.4 650.8 554.7 Z"/>
 
-                    <path fill="#89897C" stroke="none" d="
+                        <path fill="#89897C" stroke="none" d="
 M 525.6 578.45
 L 521.3 585.85
 Q 520.95 586 520.75 586.65 520.45 587.6 519.8 588.2 519.75 588.25 519.65 588.25
@@ -141,28 +147,28 @@ Q 650.2 577.5 650.4 580.45 650.4 581.4 650.05 582.7 650.3 583.7 650.45 585 650.4
 L 651.15 605.2 650.3 609.7 650.45 610.3
 Q 650.2 610.75 650.25 611.2 650.25 612.15 649.8 612.85 652.4 612.75 654.8 611.7
 L 653.9 550.5 651.45 551.7 651.2 552.15 651.3 552.75 650.95 553.35 651.05 553.95 Z"/>
-                </g>
+                    </g>
 
-                <g id="Layer2_0_FILL">
-                    <path fill="#FAFAFA" stroke="none" d="
+                    <g id="Layer2_0_FILL">
+                        <path fill="#FAFAFA" stroke="none" d="
 M 840.45 547.15
 L 844.95 110.75
 Q 653.9 81.15 464.6 107.15
 L 462.15 541.75
 Q 666.95 574.7 840.45 547.15 Z"/>
-                </g>
+                    </g>
 
-                <g id="im_0_Layer1_0_FILL">
-                    <path fill="url(#img1)" stroke="none" d="
+                    <g id="im_0_Layer1_0_FILL">
+                        <path fill="url(#img1)" stroke="none" d="
 M 6.7 4.85
 L 0 455.7
 Q 216.8 474.8 380.3 455.7
 L 385.3 10.1
 Q 204.05 -7.05 6.7 4.85 Z"/>
-                </g>
+                    </g>
 
-                <g id="Layer0_0_FILL">
-                    <path fill="#B7BABA" stroke="none" d="
+                    <g id="Layer0_0_FILL">
+                        <path fill="#B7BABA" stroke="none" d="
 M 814.8 568.1
 Q 828.9 568.7 841.9 565.2 843.8 555 842.5 548.55
 L 840.45 547.15
@@ -177,9 +183,10 @@ L 468.25 107.15
 Q 471.2 105.1 476.65 105.05 645.9 98.15 815 108.25 831.45 108.35 839.85 109.6
 L 845.25 110.15
 Q 846.7 103.7 846.45 94.3 Z"/>
-                </g>
+                    </g>
 
-                <path id="Layer3_0_1_STROKES" stroke="#000000" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                    <path id="Layer3_0_1_STROKES" stroke="#000000" stroke-width="1" stroke-linejoin="round"
+                          stroke-linecap="round" fill="none" d="
 M 654.8 611.7
 L 653.9 550.5 651.45 551.7 646.5 554.25 647.2 612.75
 Q 646.9 612.8 646.6 612.95
@@ -195,14 +202,16 @@ Q 492.95 630 492.55 630
 M 501.7 633.9
 Q 502.8 635.35 502.55 636.8 496.8 651.25 489.9 661.75 476.05 671.1 477.6 655.2 483.25 642.85 491.3 630.15 491.95 629.95 492.55 630"/>
 
-                <path id="Layer2_0_1_STROKES" stroke="#FAFAFA" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                    <path id="Layer2_0_1_STROKES" stroke="#FAFAFA" stroke-width="1" stroke-linejoin="round"
+                          stroke-linecap="round" fill="none" d="
 M 464.6 107.15
 Q 653.9 81.15 844.95 110.75
 L 840.45 547.15
 Q 666.95 574.7 462.15 541.75
 L 464.6 107.15 Z"/>
 
-                <path id="im_0_Layer1_0_1_STROKES" stroke="#FF0000" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                    <path id="im_0_Layer1_0_1_STROKES" stroke="#FF0000" stroke-width="1" stroke-linejoin="round"
+                          stroke-linecap="round" fill="none" d="
 M 6.7 4.85
 Q 204.05 -7.05 385.3 10.1
 L 380.3 455.7
@@ -210,8 +219,8 @@ Q 216.8 474.8 0 455.7
 L 6.7 4.85 Z"/>
 
 
-
-                <path id="Layer0_0_1_STROKES" stroke="#B7BABA" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                    <path id="Layer0_0_1_STROKES" stroke="#B7BABA" stroke-width="1" stroke-linejoin="round"
+                          stroke-linecap="round" fill="none" d="
 M 468.2 89
 Q 645.75 80.15 823.55 91.8 837.65 91.65 846.45 94.3 846.7 103.7 845.25 110.15
 L 839.85 109.6
@@ -225,40 +234,40 @@ Q 840.05 547.95 833.85 549.15
 L 829.75 549.7
 Q 822.5 550.8 806.8 551.4 637.45 555.75 468.55 543.05 463.35 542.85 462.55 542.35 461.7 541.8 461.8 542.4 461.8 542.6 461.75 543.35 461.55 544.7 461.1 547.75 460.95 548.8 460.85 549.75 460.5 552.95 460.9 554.4
 L 460.9 558.65 Z"/>
-            </defs>
+                </defs>
 
-            <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                <use xlinkHref="#Layer3_0_FILL"/>
-
-                <use xlinkHref="#Layer3_0_1_STROKES"/>
-            </g>
-
-            <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                <use xlinkHref="#Layer2_0_FILL"/>
-
-                <use xlinkHref="#Layer2_0_1_STROKES"/>
-            </g>
-
-            <g transform="matrix( 1, 0, 0, 1, 460.9,95.55) ">
                 <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                    <use xlinkHref="#im_0_Layer1_0_FILL"/>
+                    <use xlinkHref="#Layer3_0_FILL"/>
 
-                    <use xlinkHref="#im_0_Layer1_0_1_STROKES"/>
+                    <use xlinkHref="#Layer3_0_1_STROKES"/>
                 </g>
 
                 <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                    <use xlinkHref="#im_0_Layer0_0_1_STROKES"/>
+                    <use xlinkHref="#Layer2_0_FILL"/>
+
+                    <use xlinkHref="#Layer2_0_1_STROKES"/>
                 </g>
-            </g>
 
-            <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                <use xlinkHref="#Layer0_0_FILL"/>
+                <g transform="matrix( 1, 0, 0, 1, 460.9,95.55) ">
+                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                        <use xlinkHref="#im_0_Layer1_0_FILL"/>
 
-                <use xlinkHref="#Layer0_0_1_STROKES"/>
-            </g>
-        </svg>
+                        <use xlinkHref="#im_0_Layer1_0_1_STROKES"/>
+                    </g>
 
-</>
+                    <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                        <use xlinkHref="#im_0_Layer0_0_1_STROKES"/>
+                    </g>
+                </g>
+
+                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                    <use xlinkHref="#Layer0_0_FILL"/>
+
+                    <use xlinkHref="#Layer0_0_1_STROKES"/>
+                </g>
+            </svg>
+
+        </>
     )
 }
 export default LampPreviewLeft;

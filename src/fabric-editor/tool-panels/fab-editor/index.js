@@ -18,9 +18,7 @@ const FabEditor =()=>{
     const dispatch = useDispatch()
     const [img,setImg] = useState([{name:'',url:''},{name:'',url:''},{name:'',url:''},{name:'',url:''}])
     useEffect(() => {
-        window.addEventListener('resize', function(e) {
-            adjustCanvasDimensions();
-        }, true);
+        window.addEventListener('resize', adjustCanvasDimensions, true);
         canvas = getCanvas();
         window.canvas = canvas;
         dispatch(setCanvas(canvas));
@@ -35,12 +33,12 @@ const FabEditor =()=>{
         canvas.renderAll()
     },[]);
     const updateImages = (images)=>{
-        console.log(images);
+        // console.log(images);
         let img1 = images.find(f=>f.name === 'rect1')
         let img2 = images.find(f=>f.name === 'rect2')
         let img3 = images.find(f=>f.name === 'rect3')
         let img4 = images.find(f=>f.name === 'rect4')
-        console.log('array',[img1,img2,img3,img4])
+        // console.log('array',[img1,img2,img3,img4])
         dispatch(setImages([img1,img2,img3,img4]))
     }
     const adjustCanvasDimensions=()=>{
@@ -58,7 +56,6 @@ const FabEditor =()=>{
         canvas.renderAll();
     }
     const objectModified=(e)=>{
-        console.log('object modified')
         if(e.target){
             captureShots(canvas,updateImages)
         }
@@ -72,7 +69,6 @@ const FabEditor =()=>{
         }
     }
     const selectionCreated = (e) => {
-        console.log("event",e)
         captureShots(canvas,updateImages)
         let object = e.target
         if(!object)return

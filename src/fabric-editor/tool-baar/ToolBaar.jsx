@@ -8,6 +8,7 @@ import undoImg from "../../assets/images/undo.png";
 import grid from "../../assets/images/grid.png";
 import backward from "../../assets/images/backward.png";
 import Forward from "../../assets/images/sendForward.png";
+import deleteImg from "../../assets/images/ButtonsImages/delete.png";
 import { fabric } from "fabric";
 import "fabric-history";
 import {useSelector} from "react-redux";
@@ -121,32 +122,50 @@ const ToolBaar =()=>{
         }
     }
 
+    const deleteObject = () => {
+        let obj = canvas.getActiveObject();
+        if (!obj) return;
+        if(obj.type === 'activeSelection'){
+            obj._objects.forEach(obj => {
+                canvas.remove(obj)
+            })
+        }else{
+            canvas.remove(obj)
+        }
+        canvas.discardActiveObject();
+    }
+
     return (
         <div className={`toolbaar-container`}>
             <div className="canvas-tools">
-                <Button variant="light" onClick={undo}>
+                <Button variant="outline-light" onClick={undo}>
                     <span>
                         <img src={undoImg} height={25} width={25}/>
                     </span>
                 </Button>
-                <Button variant="light" onClick={redo}>
+                <Button variant="outline-light" onClick={redo}>
                     <span>
                         <img src={redoImg} height={25} width={25}/>
                     </span>
                 </Button>
-                <Button variant="light" onClick={sendForward}>
+                <Button variant="outline-light" onClick={sendForward}>
                     <span>
                         <img src={Forward} height={25} width={25}/>
                     </span>
                 </Button>
-                <Button variant="light" onClick={sendBackward}>
+                <Button variant="outline-light" onClick={sendBackward}>
                     <span>
                         <img src={backward} height={25} width={25}/>
                     </span>
                 </Button>
-                <Button variant="light" onClick={showGrid}>
+                <Button variant="outline-light" onClick={showGrid}>
                     <span>
                         <img src={grid} height={25} width={25}/>
+                    </span>
+                </Button>
+                <Button variant="outline-light" onClick={deleteObject}>
+                    <span>
+                        <img src={deleteImg} height={25} width={25}/>
                     </span>
                 </Button>
 

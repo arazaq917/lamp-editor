@@ -25,6 +25,7 @@ const UploadFilePanel = () => {
                     scaleX:0.3,
                     scaleY:0.3,
                 });
+                image.scaleToHeight(400)
                 canvas.centerObject(image);
                 canvas.add(image);
                 canvas.renderAll();
@@ -66,7 +67,7 @@ const UploadFilePanel = () => {
                                 <div className="container">
                                     <div className="row">
                                         <div className="col">
-                                            <img src={item} height={110} width={110} alt='image'/>
+                                            <img style={{objectFit:'contain'}} src={item} height={110} width={110} alt='image'/>
                                         </div>
                                     </div>
                                 </div>

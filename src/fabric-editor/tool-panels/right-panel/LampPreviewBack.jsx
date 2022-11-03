@@ -3,6 +3,9 @@ import {useSelector} from "react-redux";
 let modifiedImages;
 const LampPreviewBack = ()=>{
     const images = useSelector(state => state.images)
+    useEffect(()=>{
+        console.log("LampPreviewBack",images)
+    },[images])
     return(
 <>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">

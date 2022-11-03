@@ -13,7 +13,7 @@ const RightPanel =({img})=>{
     const images = useSelector(state => state.images)
     useEffect(()=>{
         console.log("objectState",objectState)
-        console.log('images',img)
+        console.log('RightPanel',images)
     },[objectState,images])
     return (
         <div className="editor-right-panel">
