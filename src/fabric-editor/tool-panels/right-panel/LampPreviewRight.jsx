@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import {useSelector} from "react-redux";
 let modifiedImages;
-const LampPreview = ()=>{
+const LampPreviewRight = ()=>{
     const images = useSelector(state => state.images)
     return(
 <>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">
             <defs>
                 <pattern id="img1"   x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
-                    <image href={images.length?images[0].url:''} x="0" y="0" width="385" height="465" preserveAspectRatio="none" />
+                    <image href={images.length?images[2].url:''} x="0" y="0" width="385" height="465" preserveAspectRatio="none" />
                 </pattern>
             </defs>
             <defs>
@@ -261,4 +261,4 @@ L 460.9 558.65 Z"/>
 </>
     )
 }
-export default LampPreview;
+export default LampPreviewRight;

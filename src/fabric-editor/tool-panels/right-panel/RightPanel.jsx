@@ -4,13 +4,16 @@ import {useSelector} from "react-redux";
 import TextProperties from "./TextProperties";
 import ImageProperties from "./ImageProperties";
 import LampPreview from "./LampPreview";
+import LampPreviewLeft from "./LampPreviewLeft";
+import LampPreviewRight from "./LampPreviewRight";
+import LampPreviewBack from "./LampPreviewBack"
 
-const RightPanel =()=>{
+const RightPanel =({img})=>{
     const objectState = useSelector(state => state.canvasObjectStates)
     const images = useSelector(state => state.images)
     useEffect(()=>{
         console.log("objectState",objectState)
-        console.log('images',images)
+        console.log('images',img)
     },[objectState,images])
     return (
         <div className="editor-right-panel">
@@ -22,8 +25,12 @@ const RightPanel =()=>{
                 objectState.image &&
                     <ImageProperties/>
             }
-            <div className="lamp_preview">
-                <LampPreview images={images}/>
+            <div>
+                <LampPreview img={img} />
+                <LampPreviewLeft img={img}/>
+                <LampPreviewRight img={img}/>
+                <LampPreviewBack img={img}/>
+
             </div>
         </div>
     );
