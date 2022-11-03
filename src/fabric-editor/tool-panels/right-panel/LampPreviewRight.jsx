@@ -8,13 +8,11 @@ const LampPreviewRight = ()=>{
     },[images])
     return(
 <>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1"  preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1280 720">
             <defs>
-                <pattern id="img1"   x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
+                <pattern id="img3"   x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
                     <image href={images.length?images[2].url:''} x="0" y="0" width="385" height="465" preserveAspectRatio="none" />
                 </pattern>
-            </defs>
-            <defs>
                 <g id="Layer3_0_FILL">
                     <path fill="#1F1D1A" stroke="none" d="
 M 492.55 630
@@ -155,8 +153,8 @@ L 462.15 541.75
 Q 666.95 574.7 840.45 547.15 Z"/>
                 </g>
 
-                <g id="im_0_Layer1_0_FILL">
-                    <path fill="url(#img1)" stroke="none" d="
+                <g id="im_0_Layer1_0_FILL3">
+                    <path fill="url(#img3)" stroke="none" d="
 M 6.7 4.85
 L 0 455.7
 Q 216.8 474.8 380.3 455.7
@@ -244,7 +242,7 @@ L 460.9 558.65 Z"/>
 
             <g transform="matrix( 1, 0, 0, 1, 460.9,95.55) ">
                 <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                    <use xlinkHref="#im_0_Layer1_0_FILL"/>
+                    <use xlinkHref="#im_0_Layer1_0_FILL3"/>
 
                     <use xlinkHref="#im_0_Layer1_0_1_STROKES"/>
                 </g>
