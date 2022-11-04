@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './index.css'
 import {useSelector} from "react-redux";
 import TextProperties from "./TextProperties";
@@ -7,7 +7,7 @@ import LampPreview from "./LampPreview";
 import LampPreviewLeft from "./LampPreviewLeft";
 import LampPreviewRight from "./LampPreviewRight";
 import LampPreviewBack from "./LampPreviewBack"
-
+import Carousel from 'react-bootstrap/Carousel';
 const RightPanel =({img})=>{
     const objectState = useSelector(state => state.canvasObjectStates)
     const images = useSelector(state => state.images)
@@ -25,12 +25,21 @@ const RightPanel =({img})=>{
                 objectState.image &&
                     <ImageProperties/>
             }
-            <div>
-                <LampPreview img={img} />
-                <LampPreviewLeft img={img}/>
-                <LampPreviewRight img={img}/>
-                <LampPreviewBack img={img}/>
-
+            <div className="svg_carousel">
+                <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                        <LampPreview img={img} />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <LampPreviewLeft img={img}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <LampPreviewRight img={img}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <LampPreviewBack img={img}/>
+                    </Carousel.Item>
+                </Carousel>
             </div>
         </div>
     );

@@ -6,14 +6,19 @@
     background-color: #2a343e;
 }
 .fab-icon-button{
+    width: 100%;
+    height: 60px;
     margin-top: 8px;
     cursor: pointer;
-    padding: 4px 8px;
+    padding: 10px 8px;
     border-radius: 2px;
     text-align: center;
 }
+.selected_panel{
+    background: #394754
+}
 .fab-icon-button:hover{
-    background: #bababa;
+    background: #394754
 }
 .center-content{
     display: flex;

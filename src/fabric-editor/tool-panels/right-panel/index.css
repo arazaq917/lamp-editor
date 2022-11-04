@@ -47,11 +47,12 @@
 .lamp_text_color{
     display: flex;
 }
-.color_picker{
-
+.carousel-indicators{
+    display: none !important;
 }
-.text_styling{
-
+.svg_carousel{
+    position: absolute;
+    bottom: 20px;
 }
 .lamp_text_props{
     display: flex;
