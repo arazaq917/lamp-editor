@@ -1,5 +1,37 @@
 import {fabric} from "fabric";
 
+ const rects = ()=>{
+    let rect1 = new fabric.Rect({
+        left: 0,
+        top: canvas.height/2,
+        width: canvas.width/4,
+        height: canvas.height/2,
+        name:'rect1'
+    });
+    let rect2 = new fabric.Rect({
+        left: rect1.width,
+        top: canvas.height/2,
+        width: canvas.width/4,
+        height: canvas.height/2,
+        name:'rect2',
+    });
+    let rect3 = new fabric.Rect({
+        left: rect2.width+rect2.left,
+        top: canvas.height/2,
+        width: canvas.width/4,
+        height: canvas.height/2,
+        name:'rect3',
+    });
+    let rect4 = new fabric.Rect({
+        left: rect3.width+rect3.left,
+        top: canvas.height/2,
+        width: canvas.width/4,
+        height: canvas.height/2,
+        name:'rect4',
+    });
+    return [rect1,rect2,rect3,rect4]
+}
+
 export  const createBounds = (canvas)=>{
     let wrapperRectTop = new fabric.Rect({
         left: 0,
@@ -29,70 +61,6 @@ export  const createBounds = (canvas)=>{
         evented:false,
         hasControls:false
     });
-    let rect1 = new fabric.Rect({
-        left: 0,
-        top: canvas.height/2,
-        name:'rect1',
-        width: canvas.width/4,
-        height: canvas.height/2,
-        visible:false,
-        fill:'transparent',
-        selectable:false,
-        stroke:'black',
-        originX:'left',
-        originY:'center',
-        evented:false,
-        hasControls:false
-    });
-    let rect2 = new fabric.Rect({
-        left: rect1.width,
-        top: canvas.height/2,
-        width: canvas.width/4,
-        height: canvas.height/2,
-        name:'rect2',
-        visible:false,
-        fill:'transparent',
-        selectable:false,
-        stroke:'black',
-        originX:'left',
-        originY:'center',
-        evented:false,
-        hasControls:false
-    });
-    let rect3 = new fabric.Rect({
-        left: rect2.width+rect2.left,
-        top: canvas.height/2,
-        width: canvas.width/4,
-        height: canvas.height/2,
-        name:'rect3',
-        fill:'transparent',
-        visible:false,
-        selectable:false,
-        stroke:'black',
-        originX:'left',
-        originY:'center',
-        evented:false,
-        hasControls:false
-    });
-    let rect4 = new fabric.Rect({
-        left: rect3.width+rect3.left,
-        top: canvas.height/2,
-        width: canvas.width/4,
-        name:'rect4',
-        height: canvas.height/2,
-        fill:'transparent',
-        visible:false,
-        selectable:false,
-        stroke:'black',
-        originX:'left',
-        originY:'center',
-        evented:false,
-        hasControls:false
-    });
-    canvas.add(rect1);
-    canvas.add(rect2);
-    canvas.add(rect3);
-    canvas.add(rect4);
     canvas.add(wrapperRectTop);
     canvas.add(wrapperRectBottom)
     canvas.bringToFront(wrapperRectTop)
@@ -103,9 +71,10 @@ export  const createBounds = (canvas)=>{
 export const captureShots = (canvas,updateImages) =>{
     let imagesArr = []
     let promises = []
-    for(let i=0;i<canvas._objects.length;i++){
+    let canvasChunks = rects()
+    for(let i=0;i<canvasChunks.length;i++){
         promises[i] = new Promise(resolve => {
-            let e = canvas._objects[i]
+            let e = canvasChunks[i]
             if(e.name === 'rect1' || e.name === 'rect2' || e.name === 'rect3' || e.name === 'rect4'){
                 e.visible = false;
                 let cropped = new Image();

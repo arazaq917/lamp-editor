@@ -42,6 +42,7 @@ const FabEditor =()=>{
         dispatch(setImages([img1,img2,img3,img4]))
     }
     const adjustCanvasDimensions=()=>{
+        console.log('window resized')
         let elHeight = 0, elWidth = 0;
         document.querySelectorAll('div').forEach((el)=>{
         if (el.classList.contains('fabric-editor-pro')){
