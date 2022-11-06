@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Form from 'react-bootstrap/Form';
 
 const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
-    "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT" ]
+    "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT", "Times New Roman",'Roboto' ]
 
 const TextProperties = () => {
     const canvas = useSelector(state => state.canvas)

@@ -14,7 +14,7 @@ import {captureShots, createBounds} from "../../../utils/bounds";
 import WebFont from 'webfontloader'
 let canvas ,canvasVar;
 const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
-    "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT" ]
+    "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT", "Times New Roman",'Roboto' ]
 const FabEditor =()=>{
     const dispatch = useDispatch()
     const [img,setImg] = useState([{name:'',url:''},{name:'',url:''},{name:'',url:''},{name:'',url:''}])
