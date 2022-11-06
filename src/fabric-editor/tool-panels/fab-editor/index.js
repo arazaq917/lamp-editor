@@ -27,7 +27,12 @@ const FabEditor =()=>{
             'selection:updated': selectionUpdated,
             'selection:cleared': selectionCleared,
             'object:added':objectAdded,
-            'object:modified':objectModified
+            'object:modified':objectModified,
+            'history:undo':historyUndo,
+            'history:redo':historyRedo,
+            'history:append':historyAppend
+
+
             })
         createBounds(canvas)
         canvas.renderAll()
@@ -56,6 +61,16 @@ const FabEditor =()=>{
         canvas.setHeight(height)
         canvas.renderAll();
     }
+    const historyUndo = (e)=>{
+        console.log('undo',e)
+    }
+    const historyRedo = (e)=>{
+        console.log('redo',e)
+    }
+    const historyAppend = (e)=>{
+        console.log('append',e)
+    }
+
     const objectModified=(e)=>{
         if(e.target){
             captureShots(canvas,updateImages)
@@ -63,7 +78,7 @@ const FabEditor =()=>{
     }
     const objectAdded = (e)=>{
         if(e.target){
-            if(!e.target.name.includes('rect')){
+            if(e.target.name && (!e.target.name.includes('Rect'))){
                 canvas.sendToBack(e.target);
                 canvas.renderAll();
             }
