@@ -34,10 +34,10 @@ const RightPanel =({img})=>{
                         <LampPreviewLeft img={img}/>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <LampPreviewRight img={img}/>
+                        <LampPreviewBack img={img}/>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <LampPreviewBack img={img}/>
+                        <LampPreviewRight img={img}/>
                     </Carousel.Item>
                 </Carousel>
             </div>
