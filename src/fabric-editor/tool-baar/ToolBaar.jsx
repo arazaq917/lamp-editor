@@ -109,17 +109,18 @@ const ToolBaar =()=>{
     }
 
     const showGrid=()=>{
-
+        let showGrid;
+        setOverlayGrid(makeGrid());
         if (!gridEnabled){
-            if(!overlayGrid) {
-                setOverlayGrid(makeGrid());
+            if(!showGrid) {
+                showGrid = makeGrid();
+                setOverlayGrid(makeGrid())
             }
-
             //to stop repetitive behaviour
             if(gridEnabled)
                 return;
 
-            canvas.setOverlayImage(overlayGrid, () => {
+            canvas.setOverlayImage(showGrid, () => {
                 canvas.renderAll();
             }, {
                 overlayImageLeft: 0,
