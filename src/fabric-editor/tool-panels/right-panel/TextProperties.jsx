@@ -8,6 +8,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from 'react-bootstrap/Form';
+
+const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
+    "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT" ]
+
 const TextProperties = () => {
     const canvas = useSelector(state => state.canvas)
     const objectStates = useSelector(state => state.canvasObjectStates)
@@ -290,12 +294,12 @@ const TextProperties = () => {
                                 onChange={changeFontFamily}
                                 value={changeFamily}
                             >
-                                <option value="Arial">Arial</option>*/}
-                                <option value="Arial Black">Arial Black</option>
-                                <option value="Impact">Impact</option>
-                                <option value="Tahoma">Tahoma</option>
-                                <option value="Times New Roman">Times New Roman</option>
-                                <option value="Roboto">Roboto</option>
+                                {
+                                    arrayFonts.map((item,index)=> {
+                                        return (
+                                            <option style={{fontFamily:item}} key={index}>{item}</option>
+                                        )})
+                                }
                             </Form.Select>
                         </Col>
                     </Row>
@@ -327,6 +331,21 @@ const TextProperties = () => {
                                 <option value="36">36</option>
                                 <option value="38">38</option>
                                 <option value="40">40</option>
+                                <option value="42">42</option>
+                                <option value="44">44</option>
+                                <option value="46">46</option>
+                                <option value="48">48</option>
+                                <option value="50">50</option>
+                                <option value="52">52</option>
+                                <option value="54">54</option>
+                                <option value="56">56</option>
+                                <option value="58">58</option>
+                                <option value="60">60</option>
+                                <option value="62">62</option>
+                                <option value="64">64</option>
+                                <option value="66">66</option>
+                                <option value="68">68</option>
+                                <option value="70">70</option>
                             </Form.Select>
                         </Col>
                     </Row>

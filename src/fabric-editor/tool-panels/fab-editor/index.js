@@ -11,9 +11,10 @@ import FabEditorRight from '../right-panel/RightPanel'
 import {useDispatch} from "react-redux";
 import {setCanvas, setImages, setObjectsState} from "../../actions";
 import {captureShots, createBounds} from "../../../utils/bounds";
-
+import WebFont from 'webfontloader'
 let canvas ,canvasVar;
-
+const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
+    "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT" ]
 const FabEditor =()=>{
     const dispatch = useDispatch()
     const [img,setImg] = useState([{name:'',url:''},{name:'',url:''},{name:'',url:''},{name:'',url:''}])
@@ -31,16 +32,27 @@ const FabEditor =()=>{
             })
         createBounds(canvas)
         canvas.renderAll()
+        loadGoogleFonts(arrayFonts)
     },[]);
+
+    const loadGoogleFonts = (fontFamily) => {
+        WebFont.load({
+            google: {
+                families: fontFamily
+            }
+        });
+    }
+
     const updateImages = (images)=>{
-        // console.log(images);
         let img1 = images.find(f=>f.name === 'rect1')
         let img2 = images.find(f=>f.name === 'rect2')
         let img3 = images.find(f=>f.name === 'rect3')
         let img4 = images.find(f=>f.name === 'rect4')
-        // console.log('array',[img1,img2,img3,img4])
         dispatch(setImages([img1,img2,img3,img4]))
     }
+    fabric.Object.prototype.transparentCorners = false;
+    fabric.Object.prototype.cornerColor = 'blue';
+    fabric.Object.prototype.cornerStyle = 'circle';
     const adjustCanvasDimensions=()=>{
         let elHeight = 0, elWidth = 0;
         document.querySelectorAll('div').forEach((el)=>{
@@ -118,7 +130,7 @@ const FabEditor =()=>{
         let text = new fabric.IText('Hello There',{
             left:200,
             top:200,
-            fontSize:20,
+            fontSize:40,
             name: 'text',
             fill:'black',
             originX:'center',

@@ -1,14 +1,23 @@
 import React, {useEffect, useState} from "react";
 import './index.css'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from 'react-bootstrap/Tab';
+import {setImages} from "../../../actions";
+import {captureShots} from "../../../../utils/bounds";
 
 let COLORS = ["#003E60", "#35ACDD", "#F7CF00", "#C40E12", "#fff", "#23803C"]
 
 const BackgroundPanel = () =>{
+    const dispatch = useDispatch()
     const canvas = useSelector(state => state.canvas)
-
+    const updateImages = (images)=>{
+        let img1 = images.find(f=>f.name === 'rect1')
+        let img2 = images.find(f=>f.name === 'rect2')
+        let img3 = images.find(f=>f.name === 'rect3')
+        let img4 = images.find(f=>f.name === 'rect4')
+        dispatch(setImages([img1,img2,img3,img4]))
+    }
     const canvasBackgroundImage = (url) => {
         if(canvas.backgroundColor !== 'White' || canvas.backgroundColor !== '#FFFFFF')
             canvas.backgroundColor = 'White'
@@ -17,6 +26,7 @@ const BackgroundPanel = () =>{
             img.onload = function () {
                 canvas.setBackgroundImage(img.currentSrc, () => {
                     canvas.requestRenderAll();
+                    captureShots(canvas,updateImages)
                 }, {
                     scaleX: (canvas.width / canvas.getZoom()) / img.width,
                     scaleY: (canvas.height / canvas.getZoom()) / img.height,
@@ -30,10 +40,12 @@ const BackgroundPanel = () =>{
         if(canvas.backgroundImage) canvas.backgroundImage = '';
         canvas.setBackgroundColor(color)
         canvas.renderAll()
+        captureShots(canvas,updateImages)
     }
     const newColor = (e) =>{
         canvas.setBackgroundColor(e.target.value)
         canvas.renderAll()
+        captureShots(canvas,updateImages)
     }
     let canvasBackgroundImages = [
         {

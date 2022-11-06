@@ -11,17 +11,27 @@ import Forward from "../../assets/images/sendForward.png";
 import deleteImg from "../../assets/images/ButtonsImages/delete.png";
 import { fabric } from "fabric";
 import "fabric-history";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {captureShots} from "../../utils/bounds";
+import {setImages} from "../actions";
 const ToolBaar =()=>{
     const [gridEnabled, setGridEnabled] = useState(false);
     const [overlayGrid, setOverlayGrid] = useState();
+    const dispatch = useDispatch()
     const canvas = useSelector(state => state.canvas)
+
     const sendForward = () => {
         let obj = canvas.getActiveObject();
         canvas.bringForward(obj);
         canvas.renderAll()
     }
-
+    const updateImages = (images)=>{
+        let img1 = images.find(f=>f.name === 'rect1')
+        let img2 = images.find(f=>f.name === 'rect2')
+        let img3 = images.find(f=>f.name === 'rect3')
+        let img4 = images.find(f=>f.name === 'rect4')
+        dispatch(setImages([img1,img2,img3,img4]))
+    }
     const sendBackward = () => {
         let obj = canvas.getActiveObject();
         canvas.sendBackwards(obj);
@@ -29,9 +39,11 @@ const ToolBaar =()=>{
     }
     const redo = () => {
         canvas.redo();
+        captureShots(canvas,updateImages)
     }
     const undo = () => {
         canvas.undo();
+        captureShots(canvas,updateImages)
     }
 
     const makeGrid = () => {
