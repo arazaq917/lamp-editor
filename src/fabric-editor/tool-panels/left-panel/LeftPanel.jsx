@@ -7,7 +7,7 @@ const LeftPanel = ({addText,addShape,addPath})=>{
     return (
         <div className="editor-left-side">
             <LeftTabMenu addShape={addShape} addPath={addPath} />
-            <Draws addText={addText}/>
+            <Draws addText={addText} />
         </div>
     );
 }
