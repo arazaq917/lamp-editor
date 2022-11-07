@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[260],{6260:function(p,a,e){p.exports=e.p+"static/media/Avocado.01fe529654293f708dfc.png"}}]);

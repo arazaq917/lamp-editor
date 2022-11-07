@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[820],{8820:function(a,e,p){a.exports=p.p+"static/media/baseball.bf2bc94d8e54d36e2009.png"}}]);

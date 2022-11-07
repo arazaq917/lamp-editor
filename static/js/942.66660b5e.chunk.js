@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[942],{7942:function(p,n,a){p.exports=a.p+"static/media/Lightning.20e7f674575264d17856.png"}}]);

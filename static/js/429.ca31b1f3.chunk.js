@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[429],{3429:function(p,a,e){p.exports=e.p+"static/media/golf.30ff55738ec92d6bcd5b.png"}}]);

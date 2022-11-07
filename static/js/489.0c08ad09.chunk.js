@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[489],{8489:function(e,p,a){e.exports=a.p+"static/media/skating.25b41e765d0e855eb7f3.png"}}]);

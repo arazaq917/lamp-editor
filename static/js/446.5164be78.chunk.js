@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[446],{6446:function(a,p,e){a.exports=e.p+"static/media/football.72739834bb6a2768905e.png"}}]);

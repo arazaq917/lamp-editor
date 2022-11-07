@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[24],{24:function(p,a,e){p.exports=e.p+"static/media/Cherries.5d6b61395d10d3a39cbb.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[265],{1265:function(p,a,c){p.exports=c.p+"static/media/Chocolate.bd331c0c879659305012.png"}}]);
