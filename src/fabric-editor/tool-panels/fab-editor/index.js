@@ -23,19 +23,10 @@ const FabEditor =()=>{
         canvas = getCanvas();
         window.canvas = canvas;
         dispatch(setCanvas(canvas));
-        canvas.on({
-            'selection:created': selectionCreated,
-            'selection:updated': selectionUpdated,
-            'selection:cleared': selectionCleared,
-            'object:added':objectAdded,
-            'object:modified':objectModified,
-            'history:undo':historyUndo,
-            'history:redo':historyRedo,
-            'history:append':historyAppend
-
-
-            })
+        stopEvents()
         createBounds(canvas)
+        canvas._historyInit();
+        startEvents();
         canvas.renderAll()
         loadGoogleFonts(arrayFonts)
     },[]);
@@ -47,7 +38,21 @@ const FabEditor =()=>{
             }
         });
     }
-
+    const startEvents = ()=>{
+        canvas.on({
+            'selection:created': selectionCreated,
+            'selection:updated': selectionUpdated,
+            'selection:cleared': selectionCleared,
+            'object:added':objectAdded,
+            'object:modified':objectModified,
+            'history:undo':historyUndo,
+            'history:redo':historyRedo,
+            'history:append':historyAppend
+        })
+    }
+    const stopEvents = ()=>{
+        canvas.__eventListeners = {}
+    }
     const updateImages = (images)=>{
         let img1 = images.find(f=>f.name === 'rect1')
         let img2 = images.find(f=>f.name === 'rect2')
