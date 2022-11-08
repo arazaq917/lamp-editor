@@ -15,10 +15,10 @@ const DrawsPanel =({addText})=>{
     return (
         <div className={`editor-panel-container draw-panel`}>
             {activeKey === '1' &&
-                <TextPanel addText={addText}/>
+                <BackgroundPanel/>
             }
             {activeKey === '2' &&
-                <BackgroundPanel/>
+                <TextPanel addText={addText}/>
             }
             {activeKey === '3' &&
                 <UploadFilePanel/>

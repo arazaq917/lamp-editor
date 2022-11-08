@@ -4,88 +4,112 @@ import {useSelector} from "react-redux";
 let modifiedImages;
 const TallLampPreview = () => {
     const images = useSelector(state => state.images)
-    useEffect(()=>{
-        console.log('LampPreview',images)
-    },[images])
+    useEffect(() => {
+        console.log('LampPreview', images)
+    }, [images])
     return (
         <>
 
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1"  preserveAspectRatio="none" x="0px" y="0px" width="450px" height="280px" viewBox="0 0 1920 1080">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="none" x="0px" y="0px"
+                 width="250px" height="180px" viewBox="0 0 1920 1080">
                 <defs>
                     <pattern id="imgt1" x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
                         <image href={images.length ? images[0].url : ''} x="0" y="0" width="300" height="400"
                                preserveAspectRatio="none"/>
                     </pattern>
-                    <radialGradient id="Gradient_1" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="105.05000000000001" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, -101.35,28.7) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_1" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="105.05000000000001"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, -101.35,28.7) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_2" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,10.8) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_2" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,10.8) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_3" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,17.75) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_3" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,17.75) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_4" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,37.5) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_4" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,37.5) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_5" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,57.35) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_5" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,57.35) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_6" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="12.0875" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 0.9679420889348501, 0.05,75.95) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_6" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="12.0875" fx="0"
+                                    fy="0" gradientTransform="matrix( 1, 0, 0, 0.9679420889348501, 0.05,75.95) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_7" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,63.95) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_7" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,63.95) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_8" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,50.25) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_8" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,50.25) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_9" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,44.25) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_9" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,44.25) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_10" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,31.1) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_10" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,31.1) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_11" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,23.75) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_11" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,23.75) "
+                                    spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
-                    <radialGradient id="Gradient_12" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,4.6) " spreadMethod="pad">
-                        <stop  offset="0%" stop-color="#FFFFFF"/>
+                    <radialGradient id="Gradient_12" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="2.5500000000000003"
+                                    fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 0.05,4.6) " spreadMethod="pad">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
 
-                        <stop  offset="100%" stop-color="#000000"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </radialGradient>
 
                     <g id="Layer10_0_FILL_T1">
@@ -194,11 +218,13 @@ M 1.4 5.95
 Q 2 5.4 2 4.6 2 3.8 1.4 3.2 0.85 2.65 0.05 2.65 -0.75 2.65 -1.35 3.2 -1.9 3.8 -1.9 4.6 -1.9 5.4 -1.35 5.95 -0.75 6.55 0.05 6.55 0.85 6.55 1.4 5.95 Z"/>
                     </g>
 
-                    <path id="Layer8_0_1_STROKES" stroke="#DFDFDF" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                    <path id="Layer8_0_1_STROKES" stroke="#DFDFDF" stroke-width="2" stroke-linejoin="round"
+                          stroke-linecap="round" fill="none" d="
 M 1077.45 927.85
 Q 1077.5 929.3 1074.4 934.25 1064.9927734375 934.138671875 1061.9 937.25 978.4537109375 955.12109375 930.975 943.9 903.0076171875 937.29296875 888.35 936.2 885.201953125 932.6775390625 882.4 933.15 877.6185546875 929.683203125 876.4 928.7 877.8947265625 925.1 884.75 922.3 898.7466796875 918.1033203125 916.8 915.65 981.45 903.55 1042.05 915.7 1047.656640625 916.6376953125 1056.125 918.9 1064.593359375 921.1623046875 1077.45 926.25"/>
 
-                    <path id="Symbol_7_0_Layer1_0_1_STROKES" stroke="#DFDFDF" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                    <path id="Symbol_7_0_Layer1_0_1_STROKES" stroke="#DFDFDF" stroke-width="1" stroke-linejoin="round"
+                          stroke-linecap="round" fill="none" d="
 M 0 0
 L 0 67.25"/>
                 </defs>

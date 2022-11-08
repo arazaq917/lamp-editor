@@ -28,8 +28,10 @@ const BackgroundPanel = () =>{
                     canvas.requestRenderAll();
                     captureShots(canvas,updateImages)
                 }, {
-                    scaleX: (canvas.width / canvas.getZoom()) / img.width,
-                    scaleY: (canvas.height / canvas.getZoom()) / img.height,
+                    originX: 'left',
+                    originY: 'top',
+                    scaleX: .19,
+                    scaleY: .2,
                     crossOrigin: 'anonymous'
                 });
             };

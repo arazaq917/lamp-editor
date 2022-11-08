@@ -17,10 +17,10 @@ const LeftTabMenu =()=>{
     return (
         <div className="editor-left-menu">
             <div className={`fab-icon-button ${index === '1' ? 'selected_panel' : ''}`} onClick={()=>activePanel('1')}>
-                <img src={TextImg} height={40} width={40}/>
+                <img src={BackgroundColor} height={40} width={40}/>
             </div>
             <div className={`fab-icon-button ${index === '2' ? 'selected_panel' : ''}`} onClick={()=>activePanel('2')}>
-                <img src={BackgroundColor} height={40} width={40}/>
+                <img src={TextImg} height={40} width={40}/>
             </div>
             <div className={`fab-icon-button ${index === '3' ? 'selected_panel' : ''}`} onClick={()=>activePanel('3')}>
                 <img src={uploadImage} height={40} width={40}/>
