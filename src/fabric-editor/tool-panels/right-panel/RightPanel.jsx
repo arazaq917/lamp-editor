@@ -57,6 +57,9 @@ const RightPanel =({img})=>{
                 <div className="svg_carousel">
                 <Carousel variant="dark" interval={null}>
                     <Carousel.Item>
+                        <TallLampPreview img={img}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
                         <TallLampPreviewLeft img={img}/>
                     </Carousel.Item>
                     <Carousel.Item>
