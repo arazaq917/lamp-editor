@@ -12,6 +12,7 @@ import {useDispatch} from "react-redux";
 import {setCanvas, setImages, setObjectsState} from "../../actions";
 import {captureShots, createBounds} from "../../../utils/bounds";
 import WebFont from 'webfontloader'
+import CanvasZoom from "./canvasZoom";
 let canvas ,canvasVar,canvasDimensions, pitchContainerBox, containerDimensions;
 const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
     "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT", "Times New Roman",'Roboto' ]
@@ -120,10 +121,7 @@ const FabEditor =()=>{
         canvas.renderAll()
     }
     const canvasContainerHeight = (el) => {
-        let windowHeight = '';
-        windowHeight = window.innerHeight - 50;
-
-        let width = el.clientWidth
+        let width
         let height
         if (window.innerWidth < 992) {
             let ratio = 1.40
@@ -219,6 +217,7 @@ const FabEditor =()=>{
                             <div className={`fabric-editor-pro center-content-column`}>
                                 <canvas id="canvas" width={1000} height={800}/>
                             </div>
+                            <CanvasZoom/>
                         </div>
                         <FabEditorRight/>
                     </div>
