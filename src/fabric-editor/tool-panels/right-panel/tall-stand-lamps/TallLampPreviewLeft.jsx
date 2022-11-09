@@ -10,7 +10,7 @@ const TallLampPreviewLeft = () => {
     return (
         <>
 
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1"  preserveAspectRatio="none" x="0px" y="0px" width="450px" height="280px" viewBox="0 0 1920 1080">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1"  preserveAspectRatio="none" x="0px" y="0px" width="250px" height="180px" viewBox="0 0 1920 1080">
                 <defs>
                     <pattern id="imgt2" x="0" y="0" width="1" height="1" preserveAspectRatio="xMinYMin max">
                         <image href={images.length?images[1].url:''} x="0" y="0" width="300" height="400"
