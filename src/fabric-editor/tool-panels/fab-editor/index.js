@@ -12,15 +12,21 @@ import {useDispatch} from "react-redux";
 import {setCanvas, setImages, setObjectsState} from "../../actions";
 import {captureShots, createBounds} from "../../../utils/bounds";
 import WebFont from 'webfontloader'
-let canvas ,canvasVar;
+let canvas ,canvasVar,canvasDimensions, pitchContainerBox, containerDimensions;
 const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
     "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT", "Times New Roman",'Roboto' ]
 const FabEditor =()=>{
     const dispatch = useDispatch()
     const [img,setImg] = useState([{name:'',url:''},{name:'',url:''},{name:'',url:''},{name:'',url:''}])
     useEffect(() => {
-        window.addEventListener('resize', adjustCanvasDimensions, true);
-        canvas = getCanvas();
+        pitchContainerBox = document.querySelector(".canvas-main-wrapper")
+        if (!pitchContainerBox) return;
+        containerDimensions = {
+            width: canvasContainerHeight(pitchContainerBox).width,
+            height: canvasContainerHeight(pitchContainerBox).height,
+        }
+        window.addEventListener('resize', updateWindowDimensions, true);
+        canvas = getCanvas(containerDimensions);
         window.canvas = canvas;
         dispatch(setCanvas(canvas));
         stopEvents()
@@ -63,29 +69,83 @@ const FabEditor =()=>{
     fabric.Object.prototype.transparentCorners = false;
     fabric.Object.prototype.cornerColor = 'blue';
     fabric.Object.prototype.cornerStyle = 'circle';
-    const adjustCanvasDimensions=()=>{
-        console.log('window resized')
-        let elHeight = 0, elWidth = 0;
-        document.querySelectorAll('div').forEach((el)=>{
-        if (el.classList.contains('fabric-editor-pro')){
-                elWidth = el.clientWidth;
-                elHeight = el.clientHeight;
-            }
+    const updateWindowDimensions = () => {
+        setCanvasDimensionsProps()
+        updateObjectsScale(canvas)
+        canvas._objects.forEach(obj => {
+            updateCanvasResize(obj)
         })
-        let width = elWidth,
-            height = elHeight;
-        canvas.setWidth(width)
-        canvas.setHeight(height)
-        canvas.renderAll();
+        canvas.renderAll()
+    };
+    const setCanvasDimensionsProps = () => {
+        const outerCanvasContainer = pitchContainerBox
+        const windowWidth = window.innerWidth
+        const ratio = canvas.getWidth() / canvas.getHeight();
+        let containerWidth = canvasContainerHeight(outerCanvasContainer).width
+        const scale = containerWidth / canvas.getWidth();
+        const zoom = canvas.getZoom() * scale;
+
+        canvasDimensions = {
+            windowWidth: windowWidth,
+            containerWidth: containerWidth,
+            ratio: ratio,
+            scale: scale,
+            zoom: zoom,
+            zoom_val: canvas.getZoom()
+        }
+    }
+    const updateObjectsScale = (canvasEl) => {
+        canvasEl.setDimensions({
+            width: canvasDimensions.containerWidth,
+            height: canvasDimensions.containerWidth / canvasDimensions.ratio
+        });
+        canvasEl.setViewportTransform([canvasDimensions.zoom, 0, 0, canvasDimensions.zoom, 0, 0]);
+    }
+    const updateCanvasResize = (obj) => {
+        switch (obj.name) {
+            case "image":
+                setObjectPadding(obj, 5, 2)
+                break;
+            case "text":
+                setObjectPadding(obj, 5, 2)
+                break;
+        }
+    }
+    const setObjectPadding = (obj, val, val2) => {
+        if (window.innerWidth < 1100) {
+            obj.set("padding", val)
+        } else {
+            obj.set("padding", val2)
+        }
+        canvas.renderAll()
+    }
+    const canvasContainerHeight = (el) => {
+        let windowHeight = '';
+        windowHeight = window.innerHeight - 50;
+
+        let width = el.clientWidth
+        let height
+        if (window.innerWidth < 992) {
+            let ratio = 1.40
+            height = window.innerHeight;
+            width = height * ratio
+        }
+        else {
+            let ratio = 1.40
+            height = window.innerHeight - 250;
+            width = height * ratio
+        }
+
+        return {
+            width: width,
+            height: height,
+        }
     }
     const historyUndo = (e)=>{
-        console.log('undo',e)
     }
     const historyRedo = (e)=>{
-        console.log('redo',e)
     }
     const historyAppend = (e)=>{
-        console.log('append',e)
     }
 
     const objectModified=(e)=>{
@@ -147,25 +207,11 @@ const FabEditor =()=>{
         }
         dispatch(setObjectsState(obj))
     }
-    const addText = () => {
-        let text = new fabric.IText('Hello There',{
-            left:200,
-            top:200,
-            fontSize:40,
-            name: 'text',
-            fill:'black',
-            originX:'center',
-            originY:'center',
-            fontFamily: 'Roboto',
-        })
-        canvas.add(text);
-        canvas.setActiveObject(text)
-        canvas.renderAll();
-    }
+
     return (
         <div className="fabric-editor-container">
             <div className="editor-main-wrapper">
-                <FabEditorLeft addText={addText}/>
+                <FabEditorLeft />
                 <div className="canvas-editor-wrapper">
                     <ToolBaar canvas={canvasVar}/>
                     <div className="canvas-right-wrapper">

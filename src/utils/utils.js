@@ -737,19 +737,20 @@ export const drawObjectDimentions = (canvas) => {
 
 
     });
-
-    // canvas.on('mouse:up', function() {
-    //     verticalLines.length = horizontalLines.length = 0;
-    //     canvas.renderAll();
-    // });
 }
-export const getCanvas=()=>{
+export const getCanvas=(containerDimensions)=>{
+    let height = Math.ceil(containerDimensions.height);
+    let width = Math.ceil(containerDimensions.width);
+    if(height % 2 != 0)
+        height += 1;
+    if(width % 2 != 0)
+        width += 1;
     const canvas = new fabric.Canvas("canvas", {
         targetFindTolerance: 10,
         selection: true,
         preserveObjectStacking: true,
-        width:700,
-        height:500,
+        width:width,
+        height:height,
         backgroundColor:'white'
     });
     return canvas;

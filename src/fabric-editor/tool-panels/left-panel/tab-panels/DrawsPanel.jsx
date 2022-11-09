@@ -5,7 +5,7 @@ import TextPanel from "./TextPanel";
 import {useSelector} from "react-redux";
 import UploadFilePanel from "./uploadFile";
 
-const DrawsPanel =({addText})=>{
+const DrawsPanel =()=>{
     const activeKey = useSelector(state => state.activePanel);
 
     useEffect(()=>{
@@ -18,7 +18,7 @@ const DrawsPanel =({addText})=>{
                 <BackgroundPanel/>
             }
             {activeKey === '2' &&
-                <TextPanel addText={addText}/>
+                <TextPanel />
             }
             {activeKey === '3' &&
                 <UploadFilePanel/>

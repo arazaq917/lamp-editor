@@ -1,7 +1,25 @@
 import React, {useEffect} from "react";
 import EditorButton from "../../../customComponents/fab-button/EditorButton";
 import './index.css'
-const TextPanel = ({addText}) =>{
+import {fabric} from "fabric";
+import {useSelector} from "react-redux";
+const TextPanel = () =>{
+    const canvas = useSelector(state => state.canvas)
+    const addText = () => {
+        let text = new fabric.IText('Hello There',{
+            left:200,
+            top:200,
+            fontSize:40,
+            name: 'text',
+            fill:'black',
+            originX:'center',
+            originY:'center',
+            fontFamily: 'Roboto',
+        })
+        canvas.add(text);
+        canvas.setActiveObject(text)
+        canvas.renderAll();
+    }
     return(
         <div className="text_panel_wrapper">
             <EditorButton onClicked={addText} customClass={'add_text-btn'} buttText={'Add Text'}/>

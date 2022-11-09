@@ -3,11 +3,11 @@ import './index.css'
 import Draws from "./tab-panels/DrawsPanel";
 import LeftTabMenu from "./left-tab-menu/LeftTabMenu";
 
-const LeftPanel = ({addText,addShape,addPath})=>{
+const LeftPanel = ()=>{
     return (
         <div className="editor-left-side">
-            <LeftTabMenu addShape={addShape} addPath={addPath} />
-            <Draws addText={addText} />
+            <LeftTabMenu />
+            <Draws />
         </div>
     );
 }
