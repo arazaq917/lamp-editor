@@ -4,6 +4,7 @@ import BackgroundPanel from "./BackgroundPanel";
 import TextPanel from "./TextPanel";
 import {useSelector} from "react-redux";
 import UploadFilePanel from "./uploadFile";
+import ProductDetail from "./ProductDetail";
 
 const DrawsPanel =()=>{
     const activeKey = useSelector(state => state.activePanel);
@@ -22,6 +23,9 @@ const DrawsPanel =()=>{
             }
             {activeKey === '3' &&
                 <UploadFilePanel/>
+            }
+            {activeKey === '4' &&
+                <ProductDetail />
             }
         </div>
     );

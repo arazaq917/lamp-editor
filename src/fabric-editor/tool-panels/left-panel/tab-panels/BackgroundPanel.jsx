@@ -6,7 +6,7 @@ import Tab from 'react-bootstrap/Tab';
 import {setImages} from "../../../actions";
 import {captureShots} from "../../../../utils/bounds";
 
-let COLORS = ["#003E60", "#35ACDD", "#F7CF00", "#C40E12", "#fff", "#23803C"]
+let COLORS = ["#fff", "#003E60", "#F7CF00", "#C40E12", "#23803C"]
 
 const BackgroundPanel = () =>{
     const dispatch = useDispatch()

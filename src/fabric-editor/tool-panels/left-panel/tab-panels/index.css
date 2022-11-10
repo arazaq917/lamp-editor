@@ -21,7 +21,7 @@
     margin: 20px 10px 20px 10px;
 }
 
-.background_panel_wrapper{
+.background_panel_wrapper, .product_panel_wrapper{
     padding: 16px;
 }
 

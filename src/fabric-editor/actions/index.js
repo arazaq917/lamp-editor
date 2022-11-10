@@ -22,3 +22,9 @@ export const setObjectsState = (nr) => {
         action: nr
     };
 };
+export const setTrimColor = (color) => {
+    return {
+        type: "SET_TRIM_COLOR",
+        color: color
+    };
+};

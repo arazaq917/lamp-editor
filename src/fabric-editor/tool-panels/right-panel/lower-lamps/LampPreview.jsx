@@ -4,6 +4,8 @@ import {useSelector} from "react-redux";
 let modifiedImages;
 const LampPreview = () => {
     const images = useSelector(state => state.images)
+    const trimColor = useSelector(state => state.trimColor)
+
     useEffect(()=>{
         console.log('LampPreview',images)
     },[images])
@@ -166,7 +168,7 @@ const LampPreview = () => {
                     </g>
 
                     <g id="Layer0_0_FILL">
-                        <path fill="#B7BABA" stroke="none" d="
+                        <path fill={trimColor} stroke="none" d="
                         M 814.8 568.1
                         Q 828.9 568.7 841.9 565.2 843.8 555 842.5 548.55
                         L 840.45 547.15

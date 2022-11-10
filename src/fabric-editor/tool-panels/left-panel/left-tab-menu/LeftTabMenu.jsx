@@ -3,6 +3,7 @@ import './index.css'
 import TextImg from '../../../../assets/images/ButtonsImages/text.png';
 import BackgroundColor from '../../../../assets/images/ButtonsImages/background (1).png';
 import uploadImage from '../../../../assets/images/ButtonsImages/upload.png';
+import product from '../../../../assets/images/ButtonsImages/manufacture.png';
 import {useDispatch} from "react-redux";
 import {setActivePanel} from "../../../actions";
 
@@ -24,6 +25,9 @@ const LeftTabMenu =()=>{
             </div>
             <div className={`fab-icon-button ${index === '3' ? 'selected_panel' : ''}`} onClick={()=>activePanel('3')}>
                 <img src={uploadImage} height={40} width={40}/>
+            </div>
+            <div className={`fab-icon-button ${index === '4' ? 'selected_panel' : ''}`} onClick={()=>activePanel('4')}>
+                <img src={product} height={40} width={40}/>
             </div>
         </div>
     );
