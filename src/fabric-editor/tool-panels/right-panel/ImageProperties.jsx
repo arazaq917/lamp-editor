@@ -94,8 +94,8 @@ const ImageProperties = () => {
     const fillObject = () => {
         let obj = canvas.getActiveObject();
         if (obj) {
-            obj.scaleToHeight(500)
-            obj.scaleToWidth(500)
+            obj.scaleToHeight(canvas.height)
+            obj.scaleToWidth(canvas.width)
             canvas.centerObject(obj);
             canvas.renderAll();
         }
