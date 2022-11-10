@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lamp-editor/static/css/main.6f0b8814.css",
-    "main.js": "/lamp-editor/static/js/main.87b1bac7.js",
+    "main.css": "/lamp-editor/static/css/main.acbbaaa6.css",
+    "main.js": "/lamp-editor/static/js/main.2109cb3f.js",
     "static/js/260.916b5ea2.chunk.js": "/lamp-editor/static/js/260.916b5ea2.chunk.js",
     "static/js/636.9eedae6a.chunk.js": "/lamp-editor/static/js/636.9eedae6a.chunk.js",
     "static/js/24.4775433c.chunk.js": "/lamp-editor/static/js/24.4775433c.chunk.js",
@@ -102,6 +102,7 @@
     "static/media/golf.jpg": "/lamp-editor/static/media/golf.2097684368728c99e086.jpg",
     "static/media/Musical.jpg": "/lamp-editor/static/media/Musical.9f563bc0bdd00e6f2315.jpg",
     "static/media/surfing.jpg": "/lamp-editor/static/media/surfing.d9bba04421f18d20f7f0.jpg",
+    "static/media/manufacture.png": "/lamp-editor/static/media/manufacture.7112f3d12592de1390e7.png",
     "static/media/background (1).png": "/lamp-editor/static/media/background (1).387f184e3a40b21969ec.png",
     "static/media/bg.png": "/lamp-editor/static/media/bg.a2e19ef655d125b7441e.png",
     "static/media/upload.png": "/lamp-editor/static/media/upload.b87b10e7cf9afd8cddb1.png",
@@ -112,11 +113,11 @@
     "static/media/rotate-right.png": "/lamp-editor/static/media/rotate-right.ced023ddfdba8f7df704.png",
     "static/media/flipRight.png": "/lamp-editor/static/media/flipRight.16508aa60273bf054ad5.png",
     "index.html": "/lamp-editor/index.html",
-    "main.6f0b8814.css.map": "/lamp-editor/static/css/main.6f0b8814.css.map",
-    "main.87b1bac7.js.map": "/lamp-editor/static/js/main.87b1bac7.js.map"
+    "main.acbbaaa6.css.map": "/lamp-editor/static/css/main.acbbaaa6.css.map",
+    "main.2109cb3f.js.map": "/lamp-editor/static/js/main.2109cb3f.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f0b8814.css",
-    "static/js/main.87b1bac7.js"
+    "static/css/main.acbbaaa6.css",
+    "static/js/main.2109cb3f.js"
   ]
 }
