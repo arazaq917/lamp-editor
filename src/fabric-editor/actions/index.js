@@ -4,6 +4,12 @@ export const setActivePanel = (key) => {
         key
     };
 };
+export const setPreviewState = (key) => {
+    return {
+        type: "SET_PREVIEW_STATE",
+        state: key
+    };
+};
 export const setCanvas = (nr) => {
     return {
         type: "SET_CANVAS",

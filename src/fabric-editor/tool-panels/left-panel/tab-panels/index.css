@@ -19,6 +19,7 @@
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     padding: 5px;
     margin: 20px 10px 20px 10px;
+    cursor: default;
 }
 
 .background_panel_wrapper, .product_panel_wrapper{
@@ -108,10 +109,26 @@
     height: calc(100vh - 280px)
 }
 
-.upload-image{
-
+.product_details{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-
+.product_selected{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.product_details:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.details_row{
+    margin-top: 10px;
+}
+.product_detail_wrapper{
+    margin-top: 20px;
+    color: #fff;
+}
 /* width */
 .background_images_wrapper::-webkit-scrollbar {
     width: 8px;

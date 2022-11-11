@@ -16,20 +16,14 @@ import TallLampPreviewBack from "./tall-stand-lamps/TallLampPreviewBack";
 const RightPanel =({img})=>{
     const objectState = useSelector(state => state.canvasObjectStates)
     const images = useSelector(state => state.images)
-    const [isLowerStand,setStand] = useState(true)
+    const previewStyle = useSelector(state => state.previewSwitch)
     useEffect(()=>{
         console.log("objectState",objectState)
         console.log('RightPanel',images)
     },[objectState,images])
-    const toggleDesign = ()=>{
-        console.log('toggled')
-        setStand(!isLowerStand)
-    }
+
     return (
         <div className="editor-right-panel">
-            <div className="col-md-12 text-center">
-                <Button color="primary" onClick={()=>toggleDesign()}>Change Design</Button>
-            </div>
             {
                 objectState.text &&
                     <TextProperties/>
@@ -38,38 +32,41 @@ const RightPanel =({img})=>{
                 objectState.image &&
                     <ImageProperties/>
             }
-            {isLowerStand ? <div className="svg_carousel">
-                <Carousel variant="dark" interval={null}>
-                    <Carousel.Item>
-                        <LampPreview img={img} />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <LampPreviewLeft img={img}/>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <LampPreviewBack img={img}/>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <LampPreviewRight img={img}/>
-                    </Carousel.Item>
-                </Carousel>
-            </div>:
+            {previewStyle === 'small' ?
                 <div className="svg_carousel">
-                <Carousel variant="dark" interval={null}>
-                    <Carousel.Item>
-                        <TallLampPreview img={img}/>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <TallLampPreviewLeft img={img}/>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <TallLampPreviewRight img={img}/>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <TallLampPreviewBack img={img}/>
-                    </Carousel.Item>
-                </Carousel>
-            </div>}
+                    <Carousel variant="dark" interval={null}>
+                        <Carousel.Item>
+                            <LampPreview img={img} />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <LampPreviewLeft img={img}/>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <LampPreviewBack img={img}/>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <LampPreviewRight img={img}/>
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
+                :
+                <div className="svg_carousel">
+                    <Carousel variant="dark" interval={null}>
+                        <Carousel.Item>
+                            <TallLampPreview img={img}/>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <TallLampPreviewLeft img={img}/>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <TallLampPreviewRight img={img}/>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <TallLampPreviewBack img={img}/>
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
+            }
         </div>
     );
 }
