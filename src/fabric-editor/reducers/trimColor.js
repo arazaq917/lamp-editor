@@ -1,4 +1,4 @@
-const trimColor = (state = '#ffffff80', action)=>{
+const trimColor = (state = '#f0f0f080', action)=>{
     if (action.type === "SET_TRIM_COLOR") {
         state = action.color
     }
