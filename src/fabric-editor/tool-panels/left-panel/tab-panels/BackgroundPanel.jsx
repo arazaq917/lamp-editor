@@ -5,7 +5,9 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from 'react-bootstrap/Tab';
 import {setImages} from "../../../actions";
 import {captureShots} from "../../../../utils/bounds";
-
+import removeBg from '../../../../assets/images/removebg.png'
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 let COLORS = ["#fff", "#003E60", "#F7CF00", "#C40E12", "#23803C"]
 
 const BackgroundPanel = () =>{
@@ -23,17 +25,20 @@ const BackgroundPanel = () =>{
             canvas.backgroundColor = 'White'
         import(`../../../../assets/images/SportsImages/largeImages/${url}.png`).then(srcSprite => {
             let img = new Image();
+            let wrapperRect = canvas._objects.find(f=>f.name === 'wrapperRect');
             img.onload = function () {
                 canvas.setBackgroundImage(img.currentSrc, () => {
                     canvas.requestRenderAll();
                     captureShots(canvas,updateImages)
                 }, {
-                    originX: 'left',
-                    originY: 'top',
-                    scaleX: .19,
-                    scaleY: .2,
+                    left:canvas.width/2,
+                    top:canvas.height/2,
+                    originX: 'center',
+                    originY: 'center',
+                    scaleX: (canvas.width / canvas.getZoom()) / img.width,
+                    scaleY: (canvas.height / canvas.getZoom()) / img.height/1.5,
                     crossOrigin: 'anonymous'
-                });
+                })
             };
             img.src = srcSprite.default;
         });
@@ -46,6 +51,12 @@ const BackgroundPanel = () =>{
     }
     const newColor = (e) =>{
         canvas.setBackgroundColor(e.target.value)
+        canvas.renderAll()
+        captureShots(canvas,updateImages)
+    }
+    const removeBackground = () =>{
+        canvas.backgroundColor = ''
+        canvas.backgroundImage = ''
         canvas.renderAll()
         captureShots(canvas,updateImages)
     }
@@ -199,6 +210,11 @@ const BackgroundPanel = () =>{
                       onClick={() => canvasBackgroundColor(color)}
                       className="colors_color black__border_light"
                       style={{backgroundColor: color}}/>)}
+                <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Remove Background</Tooltip>}>
+                  <span className="d-inline-block">
+                    <img className={'removeBackground'} onClick={removeBackground} src={removeBg} height={40} width={40}/>
+                  </span>
+                </OverlayTrigger>
             </div>
             <span className="formatted_title">Background Images</span>
             <div className="background_images_wrapper">

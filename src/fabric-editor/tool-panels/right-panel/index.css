@@ -71,3 +71,11 @@
 .flip_icon{
     padding: 0px 3px 3px 3px !important
 }
+.carousel-control-prev{
+    left: 10px !important;
+    opacity: 0.3 !important;
+}
+.carousel-control-next{
+    right: 10px !important;
+    opacity: 0.3 !important;
+}
