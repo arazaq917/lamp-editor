@@ -3,8 +3,8 @@ import './index.css'
 import {useDispatch, useSelector} from "react-redux";
 import {captureShots} from "../../../../utils/bounds";
 import {setPreviewState, setTrimColor} from "../../../actions";
-import img1 from "../../../../assets/images/lamp v2 2 1.png";
-import img2 from "../../../../assets/images/lamp 7 2.png";
+import img1 from "../../../../assets/images/Tripod.jpg";
+import img2 from "../../../../assets/images/White Base.jpg";
 
 let COLORS = ["#fff", "#003E60", "#F7CF00", "#C40E12", "#23803C"]
 
