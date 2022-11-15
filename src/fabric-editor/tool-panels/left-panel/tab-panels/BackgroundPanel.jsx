@@ -36,7 +36,7 @@ const BackgroundPanel = () =>{
                     originX: 'center',
                     originY: 'center',
                     scaleX: (canvas.width / canvas.getZoom()) / img.width,
-                    scaleY: (canvas.height / canvas.getZoom()) / img.height/1.5,
+                    scaleY: (canvas.height / canvas.getZoom()) / img.height/2,
                     crossOrigin: 'anonymous'
                 })
             };
