@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[652],{9652:function(a,p,e){a.exports=e.p+"static/media/Desert Print.68b0a4bc1a2807c95d14.jpg"}}]);
