@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import './index.css'
 import {useDispatch, useSelector} from "react-redux";
 import Tabs from "react-bootstrap/Tabs";
@@ -8,6 +8,7 @@ import {captureShots} from "../../../../utils/bounds";
 import removeBg from '../../../../assets/images/removebg.png'
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import moreBtn from "../../../../assets/images/ButtonsImages/more.png";
 
 let COLORS = ["#fff", "#003E60", "#F7CF00", "#C40E12", "#23803C"]
 const BackgroundPanel = () =>{
@@ -54,11 +55,15 @@ const BackgroundPanel = () =>{
         canvas.renderAll()
         captureShots(canvas,updateImages)
     }
+    const colorPicker = useRef();
     const removeBackground = () =>{
         canvas.backgroundColor = ''
         // canvas.backgroundImage = ''
         canvas.renderAll()
         captureShots(canvas,updateImages)
+    }
+    const handleColorChange = ()=>{
+        colorPicker.current.click();
     }
     let SolidImages = [
         {
@@ -226,8 +231,10 @@ const BackgroundPanel = () =>{
         <div className="background_panel_wrapper">
             <span className="formatted_title">Background Colors</span>
             <div className="colors_container">
-                <input id="color" type="color" onChange={newColor} className={'colors_color'}/>
-                {COLORS.map(color => <div key={color}
+                <div className="colors_color black__border_light" onClick={()=>handleColorChange()}>
+                    <img src={moreBtn} style={{ width: 40, height: 40}}/>
+                </div>
+                <input style={{display:"none"}} ref={colorPicker} id="color" type="color" onChange={newColor} className={'colors_color'}/>                {COLORS.map(color => <div key={color}
                       data-color={color}
                       onClick={() => canvasBackgroundColor(color)}
                       className="colors_color black__border_light"
