@@ -8,8 +8,8 @@ import {captureShots} from "../../../../utils/bounds";
 import removeBg from '../../../../assets/images/removebg.png'
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-let COLORS = ["#fff", "#003E60", "#F7CF00", "#C40E12", "#23803C"]
 
+let COLORS = ["#fff", "#003E60", "#F7CF00", "#C40E12", "#23803C"]
 const BackgroundPanel = () =>{
     const dispatch = useDispatch()
     const canvas = useSelector(state => state.canvas)
@@ -60,6 +60,28 @@ const BackgroundPanel = () =>{
         canvas.renderAll()
         captureShots(canvas,updateImages)
     }
+    let SolidImages = [
+        {
+            imgUrl: "Winter Print",
+            class:"background_Winter"
+        },
+        {
+            imgUrl: "Desert Print",
+            class:"background_Desert"
+        },
+        {
+            imgUrl: "Fall Print",
+            class:"background_Fall"
+        },
+        {
+            imgUrl: "Summer Print",
+            class:"background_Summer"
+        },
+        {
+            imgUrl: "Winter Print",
+            class:"background_Winter"
+        },
+    ];
     let canvasBackgroundImages = [
         {
             imgUrl: "ballet",
@@ -226,12 +248,17 @@ const BackgroundPanel = () =>{
                 >
                     <Tab eventKey="Sports" title="Sports">
                         {canvasBackgroundImages.map(m=>
-                            <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
+                            <div onClick={()=>{canvasBackgroundImage(m.imgUrl, 'png')}} className={`lamp_background ${m.class}`}/>
                         )}
                     </Tab>
                     <Tab eventKey="Various" title="Various">
                         {canvasBackgroundImages1.map(m=>
-                            <div onClick={()=>{canvasBackgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
+                            <div onClick={()=>{canvasBackgroundImage(m.imgUrl, 'png')}} className={`lamp_background ${m.class}`}/>
+                        )}
+                    </Tab>
+                    <Tab eventKey="Solid" title="Solid">
+                        {SolidImages.map(m=>
+                            <div onClick={()=>{canvasBackgroundImage(m.imgUrl, 'jpg')}} className={`lamp_background ${m.class}`}/>
                         )}
                     </Tab>
                 </Tabs>
