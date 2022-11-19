@@ -21,8 +21,8 @@ const BackgroundPanel = () =>{
         dispatch(setImages([img1,img2,img3,img4]))
     }
     const canvasBackgroundImage = (url) => {
-        if(canvas.backgroundColor !== 'White' || canvas.backgroundColor !== '#FFFFFF')
-            canvas.backgroundColor = 'White'
+        // if(canvas.backgroundColor !== 'White' || canvas.backgroundColor !== '#FFFFFF')
+        //     canvas.backgroundColor = 'White'
         import(`../../../../assets/images/SportsImages/largeImages/${url}.png`).then(srcSprite => {
             let img = new Image();
             let wrapperRect = canvas._objects.find(f=>f.name === 'wrapperRect');
@@ -44,7 +44,7 @@ const BackgroundPanel = () =>{
         });
     }
     const canvasBackgroundColor = (color) =>{
-        if(canvas.backgroundImage) canvas.backgroundImage = '';
+        // if(canvas.backgroundImage) canvas.backgroundImage = '';
         canvas.setBackgroundColor(color)
         canvas.renderAll()
         captureShots(canvas,updateImages)
@@ -56,7 +56,7 @@ const BackgroundPanel = () =>{
     }
     const removeBackground = () =>{
         canvas.backgroundColor = ''
-        canvas.backgroundImage = ''
+        // canvas.backgroundImage = ''
         canvas.renderAll()
         captureShots(canvas,updateImages)
     }
