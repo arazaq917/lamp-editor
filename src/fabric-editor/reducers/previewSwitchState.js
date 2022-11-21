@@ -1,4 +1,4 @@
-const previewSwitch = (state = "small", action)=>{
+const previewSwitch = (state = "Tripod", action)=>{
     if (action.type === "SET_PREVIEW_STATE") {
         state = action.state
     }

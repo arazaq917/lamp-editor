@@ -132,6 +132,12 @@
 .removeBackground{
     cursor: pointer;
 }
+
+.selectedBase_content{
+    overflow-y: auto;
+    height: calc(100vh - 280px);
+}
+
 /* width */
 .background_images_wrapper::-webkit-scrollbar {
     width: 8px;
@@ -172,6 +178,49 @@
     visibility:hidden;
 }
 .background_images_wrapper:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
+}
+
+/* width */
+.selectedBase_content::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.selectedBase_content::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+.selectedBase_content::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+    visibility:hidden;
+}
+.selectedBase_content:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
+}
+
+
+/* width */
+.selectedBase_content::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.selectedBase_content::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+.selectedBase_content::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+    visibility:hidden;
+}
+.selectedBase_content:hover::-webkit-scrollbar-thumb {
     visibility:visible;
 }
 

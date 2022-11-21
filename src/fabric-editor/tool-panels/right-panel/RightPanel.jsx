@@ -32,7 +32,7 @@ const RightPanel =({img})=>{
                 objectState.image &&
                     <ImageProperties/>
             }
-            {previewStyle === 'small' ?
+            {previewStyle === 'Tripod' ?
                 <div className="svg_carousel">
                     <Carousel variant="dark" interval={null}>
                         <Carousel.Item>
