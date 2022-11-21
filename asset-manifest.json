@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lamp-editor/static/css/main.deff4175.css",
-    "main.js": "/lamp-editor/static/js/main.f15ee61b.js",
+    "main.css": "/lamp-editor/static/css/main.0b508086.css",
+    "main.js": "/lamp-editor/static/js/main.c2fadd02.js",
     "static/js/260.916b5ea2.chunk.js": "/lamp-editor/static/js/260.916b5ea2.chunk.js",
     "static/js/636.9eedae6a.chunk.js": "/lamp-editor/static/js/636.9eedae6a.chunk.js",
     "static/js/24.4775433c.chunk.js": "/lamp-editor/static/js/24.4775433c.chunk.js",
@@ -106,10 +106,13 @@
     "static/media/golf.jpg": "/lamp-editor/static/media/golf.2097684368728c99e086.jpg",
     "static/media/Musical.jpg": "/lamp-editor/static/media/Musical.9f563bc0bdd00e6f2315.jpg",
     "static/media/surfing.jpg": "/lamp-editor/static/media/surfing.d9bba04421f18d20f7f0.jpg",
+    "static/media/Silver Base.png": "/lamp-editor/static/media/Silver Base.11b135ee6f280a4a6463.png",
     "static/media/background (1).png": "/lamp-editor/static/media/background (1).387f184e3a40b21969ec.png",
     "static/media/manufacture.png": "/lamp-editor/static/media/manufacture.ed592e75e24023098b0c.png",
     "static/media/bg.png": "/lamp-editor/static/media/bg.a2e19ef655d125b7441e.png",
+    "static/media/Glass Base.jpg": "/lamp-editor/static/media/Glass Base.d6e419bd4046283f888f.jpg",
     "static/media/Tripod.jpg": "/lamp-editor/static/media/Tripod.c510f9b6c4738fe1bfa5.jpg",
+    "static/media/Black Base.jpg": "/lamp-editor/static/media/Black Base.31b12aa32c28428dfbf0.jpg",
     "static/media/White Base.jpg": "/lamp-editor/static/media/White Base.9bb65ee228c42c60ddad.jpg",
     "static/media/upload.png": "/lamp-editor/static/media/upload.b87b10e7cf9afd8cddb1.png",
     "static/media/text.png": "/lamp-editor/static/media/text.96063baa76af394247aa.png",
@@ -120,11 +123,11 @@
     "static/media/rotate-right.png": "/lamp-editor/static/media/rotate-right.ced023ddfdba8f7df704.png",
     "static/media/flipRight.png": "/lamp-editor/static/media/flipRight.16508aa60273bf054ad5.png",
     "index.html": "/lamp-editor/index.html",
-    "main.deff4175.css.map": "/lamp-editor/static/css/main.deff4175.css.map",
-    "main.f15ee61b.js.map": "/lamp-editor/static/js/main.f15ee61b.js.map"
+    "main.0b508086.css.map": "/lamp-editor/static/css/main.0b508086.css.map",
+    "main.c2fadd02.js.map": "/lamp-editor/static/js/main.c2fadd02.js.map"
   },
   "entrypoints": [
-    "static/css/main.deff4175.css",
-    "static/js/main.f15ee61b.js"
+    "static/css/main.0b508086.css",
+    "static/js/main.c2fadd02.js"
   ]
 }
