@@ -10,7 +10,6 @@ const HeaderComponent =()=>{
                 <span className={"section-sperator-text"}>LAMP EDITOR</span>
             </div>
             <div className="left-section">
-                <EditorButton customClass={'share-btn'} buttText={'Share'}/>
                 <EditorButton customClass={'done-btn'} buttText={'Done'}/>
             </div>
         </div>

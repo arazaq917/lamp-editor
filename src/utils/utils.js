@@ -1,4 +1,5 @@
 import {fabric} from "fabric";
+import {captureShots} from "./bounds";
 
 export const drawObjectDimentions = (canvas) => {
     var ctx = canvas.getSelectionContext(),
@@ -754,4 +755,25 @@ export const getCanvas=(containerDimensions)=>{
         backgroundColor:'white'
     });
     return canvas;
+}
+
+export const canvasBackgroundImage = (url, type, canvas, callback, images) => {
+    import(`../assets/images/SportsImages/largeImages/${url}.${type}`).then(srcSprite => {
+        let img = new Image();
+        img.onload = function () {
+            canvas.setBackgroundImage(img.currentSrc, () => {
+                canvas.requestRenderAll();
+                callback && callback(canvas, images)
+            }, {
+                left:canvas.width/2,
+                top:canvas.height/2,
+                originX: 'center',
+                originY: 'center',
+                scaleX: (canvas.width / canvas.getZoom()) / img.width,
+                scaleY: (canvas.height / canvas.getZoom()) / img.height/2,
+                crossOrigin: 'anonymous'
+            })
+        };
+        img.src = srcSprite.default;
+    });
 }

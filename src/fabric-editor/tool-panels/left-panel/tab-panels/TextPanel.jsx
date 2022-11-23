@@ -22,6 +22,7 @@ const TextPanel = () =>{
     }
     return(
         <div className="text_panel_wrapper">
+            <span className="formatted_title">4. Add text if desired</span>
             <EditorButton onClicked={addText} customClass={'add_text-btn'} buttText={'Add Text'}/>
         </div>
     )

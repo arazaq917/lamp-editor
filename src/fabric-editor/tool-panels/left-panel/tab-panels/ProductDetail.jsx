@@ -1,12 +1,12 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import './index.css'
 import {useDispatch, useSelector} from "react-redux";
 import {captureShots} from "../../../../utils/bounds";
 import {setPreviewState, setTrimColor} from "../../../actions";
-import Tripod from "../../../../assets/images/Tripod.jpg";
-import White from "../../../../assets/images/White Base.jpg";
-import Glass from "../../../../assets/images/Glass Base.jpg";
-import Black from "../../../../assets/images/Black Base.jpg";
+import Tripod from "../../../../assets/images/Tripod.png";
+import White from "../../../../assets/images/White_Base.png";
+import Glass from "../../../../assets/images/Glass_Base.png";
+import Black from "../../../../assets/images/Black_Base.png";
 import Silver from "../../../../assets/images/Silver Base.png";
 import moreBtn from "../../../../assets/images/ButtonsImages/more.png";
 
@@ -35,7 +35,7 @@ const ProductDetail =()=>{
     return (
         <div className={`product_panel_wrapper`}>
             <div>
-                <span className="formatted_title">Trim Colors</span>
+                <span className="formatted_title">Choose Color of Top and Bottom Trim</span>
                 <div className="colors_container">
                     <div className="colors_color black__border_light" onClick={()=>handleColorChange()}>
                         <img src={moreBtn} style={{ width: 40, height: 40}}/>
@@ -50,7 +50,7 @@ const ProductDetail =()=>{
             </div>
             <div className='selectedBase_content'>
                 <div className="details_row">
-                    <span className="formatted_title">Select Lamp</span>
+                    <span className="formatted_title">Choose Lamp Base (or Shade Only)</span>
                     <div className="container">
                         <div className="row">
                             <div className={`${previewStyle === 'Tripod' ? 'product_selected' : ''} col product_details`} onClick={()=>toggleDesign('Tripod')}>
@@ -74,25 +74,6 @@ const ProductDetail =()=>{
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className={'product_detail_wrapper'}>
-                    {previewStyle === 'Tripod' ?
-                        <div>
-                            <h2>Lorem Tripod Ipsum</h2>
-                            <p>
-                                Replace color-adjust to print-color-adjust.
-                                The color-adjust shorthand is currently deprecated.
-                            </p>
-                        </div>
-                        :
-                        <div>
-                            <h2>Lorem Large Ipsum</h2>
-                            <p>
-                                Replace color-adjust to print-color-adjust.
-                                The color-adjust shorthand is currently deprecated.
-                            </p>
-                        </div>
-                    }
                 </div>
             </div>
         </div>

@@ -1,11 +1,9 @@
 import React, {useRef, useState} from "react";
 import './index.css'
 import {useSelector} from "react-redux";
-import img1 from '../../../../assets/images/bg.png'
-import img2 from '../../../../assets/images/PNGVarious/baby.jpg'
 
 const UploadFilePanel = () => {
-    const [imageData, setImageData] = useState([img1, img2])
+    const [imageData, setImageData] = useState([])
     const inputRef = useRef()
     const canvas = useSelector(state => state.canvas)
 
@@ -55,12 +53,13 @@ const UploadFilePanel = () => {
 
     return(
         <div className="file_panel_wrapper">
+            <span className="formatted_title">5. Upload your Picture or Artwork</span><br/>
             <div className="secondary-btn" onClick={uploadFile}>
-                <input className="d_none" type="file" onChange={uploadFileHandler} name="files"  ref={inputRef} />
+                <input className="d_none" type="file" onChange={uploadFileHandler} name="files" onClick={(e)=>{e.target.value = null}}  ref={inputRef} />
                 <div className="upload-image">Upload Image</div>
             </div>
             <div className="images-row">
-                {imageData.length &&
+                {imageData.length > 0 &&
                     imageData.map((item,index)=> {
                         return (
                             <div key={index} className="images-div" onClick={()=>addImage(item)}>
