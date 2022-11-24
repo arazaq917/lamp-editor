@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lamp-editor/static/css/main.dce1e987.css",
-    "main.js": "/lamp-editor/static/js/main.945b8bab.js",
+    "main.css": "/lamp-editor/static/css/main.51e4fced.css",
+    "main.js": "/lamp-editor/static/js/main.7fab9624.js",
     "static/js/260.916b5ea2.chunk.js": "/lamp-editor/static/js/260.916b5ea2.chunk.js",
     "static/js/636.9eedae6a.chunk.js": "/lamp-editor/static/js/636.9eedae6a.chunk.js",
     "static/js/24.4775433c.chunk.js": "/lamp-editor/static/js/24.4775433c.chunk.js",
@@ -42,13 +42,13 @@
     "static/js/141.97b36a0c.chunk.js": "/lamp-editor/static/js/141.97b36a0c.chunk.js",
     "static/js/37.65725039.chunk.js": "/lamp-editor/static/js/37.65725039.chunk.js",
     "static/js/382.e292e2a5.chunk.js": "/lamp-editor/static/js/382.e292e2a5.chunk.js",
-    "static/media/Fall Print.jpg": "/lamp-editor/static/media/Fall Print.b2f7d7553d1cd4aa21a6.jpg",
-    "static/media/Desert Print.jpg": "/lamp-editor/static/media/Desert Print.6b414a207f630feb3926.jpg",
-    "static/media/Winter Print.jpg": "/lamp-editor/static/media/Winter Print.1091d50841aa58cd618f.jpg",
+    "static/media/Fall Print.jpg": "/lamp-editor/static/media/Fall Print.00f58f64c12ea63f8c28.jpg",
+    "static/media/Desert Print.jpg": "/lamp-editor/static/media/Desert Print.401ce4c7fd48bd486cec.jpg",
+    "static/media/Winter Print.jpg": "/lamp-editor/static/media/Winter Print.c6247c3ee9a6749c48e7.jpg",
     "static/media/cellos.png": "/lamp-editor/static/media/cellos.846711f1303cff68eef8.png",
-    "static/media/Spring Print.jpg": "/lamp-editor/static/media/Spring Print.9a7a18dbfe467250e094.jpg",
+    "static/media/Spring Print.jpg": "/lamp-editor/static/media/Spring Print.438f9fb42c6033b67c9c.jpg",
     "static/media/skateboarding.png": "/lamp-editor/static/media/skateboarding.4dea61cb913aced64983.png",
-    "static/media/Summer Print.jpg": "/lamp-editor/static/media/Summer Print.71658d9fa78c42fe7f59.jpg",
+    "static/media/Summer Print.jpg": "/lamp-editor/static/media/Summer Print.fd4ae4e15119ea194868.jpg",
     "static/media/tvs.png": "/lamp-editor/static/media/tvs.93d8904a3458b4724d9a.png",
     "static/media/flying.png": "/lamp-editor/static/media/flying.76cfd61c03c9abcd8b2b.png",
     "static/media/skulbunny.png": "/lamp-editor/static/media/skulbunny.c6b29ecd3042a5c54a0c.png",
@@ -132,11 +132,11 @@
     "static/media/rotate-right.png": "/lamp-editor/static/media/rotate-right.ced023ddfdba8f7df704.png",
     "static/media/flipRight.png": "/lamp-editor/static/media/flipRight.16508aa60273bf054ad5.png",
     "index.html": "/lamp-editor/index.html",
-    "main.dce1e987.css.map": "/lamp-editor/static/css/main.dce1e987.css.map",
-    "main.945b8bab.js.map": "/lamp-editor/static/js/main.945b8bab.js.map"
+    "main.51e4fced.css.map": "/lamp-editor/static/css/main.51e4fced.css.map",
+    "main.7fab9624.js.map": "/lamp-editor/static/js/main.7fab9624.js.map"
   },
   "entrypoints": [
-    "static/css/main.dce1e987.css",
-    "static/js/main.945b8bab.js"
+    "static/css/main.51e4fced.css",
+    "static/js/main.7fab9624.js"
   ]
 }
