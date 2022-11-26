@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[842],{1842:function(a,p,i){a.exports=i.p+"static/media/Spring Print.fbaaf21f58474d6d299a.jpg"}}]);

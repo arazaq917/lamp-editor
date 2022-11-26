@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmain_app=self.webpackChunkmain_app||[]).push([[4],{2004:function(e,p,a){e.exports=a.p+"static/media/Summer Print.5f2bed02c84e17f65f97.jpg"}}]);
