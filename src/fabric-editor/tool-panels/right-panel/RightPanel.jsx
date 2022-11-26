@@ -13,6 +13,9 @@ import TallLampPreview from "./tall-stand-lamps/TallLampPreview";
 import TallLampPreviewLeft from "./tall-stand-lamps/TallLampPreviewLeft";
 import TallLampPreviewRight from "./tall-stand-lamps/TallLampPreviewRight";
 import TallLampPreviewBack from "./tall-stand-lamps/TallLampPreviewBack";
+import SilverLampPreview from "./silverLampStands/SilverLampPreview";
+import BlackLampPreview from "./BlackLampsPreview/BlackLampsPreview";
+import GlassLampPreview from "./GlassLampPreview/GlassLampPreview";
 const RightPanel =({img})=>{
     const objectState = useSelector(state => state.canvasObjectStates)
     const images = useSelector(state => state.images)
@@ -32,25 +35,25 @@ const RightPanel =({img})=>{
                 objectState.image &&
                     <ImageProperties/>
             }
-            {previewStyle === 'Tripod' ?
-                <div className="svg_carousel">
-                    <Carousel variant="dark" interval={null}>
-                        <Carousel.Item>
-                            <LampPreview img={img} />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <LampPreviewLeft img={img}/>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <LampPreviewBack img={img}/>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <LampPreviewRight img={img}/>
-                        </Carousel.Item>
-                    </Carousel>
-                </div>
-                :
-                <div className="svg_carousel">
+            {previewStyle === 'Tripod' &&
+            <div className="svg_carousel">
+                <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                        <LampPreview img={img}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <LampPreviewLeft img={img}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <LampPreviewBack img={img}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <LampPreviewRight img={img}/>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+            }
+            {previewStyle === 'White' && <div className="svg_carousel">
                     <Carousel variant="dark" interval={null}>
                         <Carousel.Item>
                             <TallLampPreview img={img}/>
@@ -66,6 +69,57 @@ const RightPanel =({img})=>{
                         </Carousel.Item>
                     </Carousel>
                 </div>
+            }
+            {previewStyle === 'Silver' && <div className="svg_carousel">
+                <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                        <SilverLampPreview  index={0}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <SilverLampPreview  index={1}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <SilverLampPreview i index={2}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <SilverLampPreview  index={3}/>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+            }
+            {previewStyle === 'Black' && <div className="svg_carousel">
+                <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                        <BlackLampPreview  index={0}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <BlackLampPreview  index={1}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <BlackLampPreview  index={2}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <BlackLampPreview  index={3}/>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+            }
+            {previewStyle === 'Glass' && <div className="svg_carousel">
+                <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                        <GlassLampPreview  index={0}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <GlassLampPreview  index={1}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <GlassLampPreview  index={2}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <GlassLampPreview  index={3}/>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
             }
         </div>
     );

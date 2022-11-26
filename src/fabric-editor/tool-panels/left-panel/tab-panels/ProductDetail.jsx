@@ -35,7 +35,7 @@ const ProductDetail =()=>{
     return (
         <div className={`product_panel_wrapper`}>
             <div>
-                <span className="formatted_title">Choose Color of Top and Bottom Trim</span>
+                <span className="formatted_title">6. Choose Color of Top and Bottom Trim</span>
                 <div className="colors_container">
                     <div className="colors_color black__border_light" onClick={()=>handleColorChange()}>
                         <img src={moreBtn} style={{ width: 40, height: 40}}/>
@@ -50,7 +50,7 @@ const ProductDetail =()=>{
             </div>
             <div className='selectedBase_content'>
                 <div className="details_row">
-                    <span className="formatted_title">Choose Lamp Base (or Shade Only)</span>
+                    <span className="formatted_title">7. Choose Lamp Base (or Shade Only)</span>
                     <div className="container">
                         <div className="row">
                             <div className={`${previewStyle === 'Tripod' ? 'product_selected' : ''} col product_details`} onClick={()=>toggleDesign('Tripod')}>
