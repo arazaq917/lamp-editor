@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lamp-editor/static/css/main.51e4fced.css",
-    "main.js": "/lamp-editor/static/js/main.a4339f36.js",
+    "main.css": "/lamp-editor/static/css/main.124827af.css",
+    "main.js": "/lamp-editor/static/js/main.8653a3f2.js",
     "static/js/260.916b5ea2.chunk.js": "/lamp-editor/static/js/260.916b5ea2.chunk.js",
     "static/js/636.9eedae6a.chunk.js": "/lamp-editor/static/js/636.9eedae6a.chunk.js",
     "static/js/24.4775433c.chunk.js": "/lamp-editor/static/js/24.4775433c.chunk.js",
@@ -123,6 +123,7 @@
     "static/media/transparent.jpg": "/lamp-editor/static/media/transparent.86e0450c10d09228826b.jpg",
     "static/media/background.png": "/lamp-editor/static/media/background.8b58c845b004a6a97dcc.png",
     "static/media/upload.png": "/lamp-editor/static/media/upload.b87b10e7cf9afd8cddb1.png",
+    "static/media/shadow.png": "/lamp-editor/static/media/shadow.d44418ffff1ec689c405.png",
     "static/media/text.png": "/lamp-editor/static/media/text.96063baa76af394247aa.png",
     "static/media/more.png": "/lamp-editor/static/media/more.9bfa15f12432f282314c.png",
     "static/media/picture.png": "/lamp-editor/static/media/picture.9142439250418879c841.png",
@@ -132,11 +133,11 @@
     "static/media/rotate-right.png": "/lamp-editor/static/media/rotate-right.ced023ddfdba8f7df704.png",
     "static/media/flipRight.png": "/lamp-editor/static/media/flipRight.16508aa60273bf054ad5.png",
     "index.html": "/lamp-editor/index.html",
-    "main.51e4fced.css.map": "/lamp-editor/static/css/main.51e4fced.css.map",
-    "main.a4339f36.js.map": "/lamp-editor/static/js/main.a4339f36.js.map"
+    "main.124827af.css.map": "/lamp-editor/static/css/main.124827af.css.map",
+    "main.8653a3f2.js.map": "/lamp-editor/static/js/main.8653a3f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.51e4fced.css",
-    "static/js/main.a4339f36.js"
+    "static/css/main.124827af.css",
+    "static/js/main.8653a3f2.js"
   ]
 }
