@@ -765,6 +765,7 @@ export const canvasBackgroundImage = (url, type, canvas, callback, images) => {
                 canvas.requestRenderAll();
                 callback && callback(canvas, images)
             }, {
+                name:url,
                 left:canvas.width/2,
                 top:canvas.height/2,
                 originX: 'center',

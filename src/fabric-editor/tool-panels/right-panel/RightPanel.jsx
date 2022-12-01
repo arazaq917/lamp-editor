@@ -16,6 +16,7 @@ import TallLampPreviewBack from "./tall-stand-lamps/TallLampPreviewBack";
 import SilverLampPreview from "./silverLampStands/SilverLampPreview";
 import BlackLampPreview from "./BlackLampsPreview/BlackLampsPreview";
 import GlassLampPreview from "./GlassLampPreview/GlassLampPreview";
+import ShadeOnlyPreview from "./ShadeOnlyPreview/SahdeOnlyPreview";
 const RightPanel =({img})=>{
     const objectState = useSelector(state => state.canvasObjectStates)
     const images = useSelector(state => state.images)
@@ -117,6 +118,23 @@ const RightPanel =({img})=>{
                     </Carousel.Item>
                     <Carousel.Item>
                         <GlassLampPreview  index={3}/>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+            }
+            {previewStyle === 'shade-only' && <div className="svg_carousel">
+                <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                        <ShadeOnlyPreview  index={0}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <ShadeOnlyPreview  index={1}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <ShadeOnlyPreview  index={2}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <ShadeOnlyPreview  index={3}/>
                     </Carousel.Item>
                 </Carousel>
             </div>

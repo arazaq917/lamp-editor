@@ -21,21 +21,22 @@ const BackgroundPanel = () =>{
         dispatch(setImages([img1,img2,img3,img4]))
     }
     const canvasBackgroundColor = (color) =>{
+        if(canvas.backgroundImage && canvas.backgroundImage.name === 'transparent'){
+            canvas.setBackgroundImage(null)
+        }
         canvas.setBackgroundColor(color)
         canvas.renderAll()
         captureShots(canvas,updateImages)
     }
     const newColor = (e) =>{
+        if(canvas.backgroundImage && canvas.backgroundImage.name === 'transparent'){
+            canvas.setBackgroundImage(null)
+        }
         canvas.setBackgroundColor(e.target.value)
         canvas.renderAll()
         captureShots(canvas,updateImages)
     }
     const colorPicker = useRef();
-    const removeBackground = () =>{
-        canvas.backgroundColor = ''
-        canvas.renderAll()
-        captureShots(canvas,updateImages)
-    }
     const handleColorChange = ()=>{
         colorPicker.current.click();
     }
@@ -83,7 +84,7 @@ const BackgroundPanel = () =>{
                     <img className={'removeBackground'} onClick={()=>{backgroundImage('transparent')}} src={removeBg} height={80} width={80}/>
                 </span>
             </div>
-            <span className="formatted_title">2. Choose a Background Theme</span>
+            <span className="formatted_title">2. Or Choose a Background Theme</span>
             <div className="background_images_wrapper background_scroll">
                 {SolidImages.map(m=>
                     <div onClick={()=>{backgroundImage(m.imgUrl)}} className={`lamp_background ${m.class}`}/>
