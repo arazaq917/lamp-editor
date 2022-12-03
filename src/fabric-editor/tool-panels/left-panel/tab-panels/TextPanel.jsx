@@ -15,6 +15,8 @@ const TextPanel = () =>{
             originX:'center',
             originY:'center',
             fontFamily: 'Roboto',
+            isShadow:false,
+            shadow:null
         })
         canvas.add(text);
         canvas.setActiveObject(text)

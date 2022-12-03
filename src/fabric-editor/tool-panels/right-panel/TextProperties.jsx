@@ -3,7 +3,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import centreAlign from "../../../assets/images/center.png";
 import leftAlign from "../../../assets/images/left.png";
 import rightAlign from "../../../assets/images/right.png";
-import './index.css'
+import './index.css';
+import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -23,9 +24,22 @@ const TextProperties = () => {
     const [changeFamily, setChangeFamily] = useState('');
     const [changeAlign, setAlignment] = useState('left');
     const [textColor, setTextColor] = useState('');
+    const [isShadow, setShadow] = useState(false);
+    const [blur,setBlur] = useState(0);
+    const [shadowColor,setShadowColor] = useState('#FFFFFF')
 
     useEffect(() => {
         let obj = canvas?.getActiveObject()
+        if(obj.isShadow){
+            setShadow(true);
+            setBlur(obj.shadow.blur*10)
+            setShadowColor(obj.shadow.color);
+        }
+        else {
+            setShadow(false)
+            setBlur(0);
+            setShadowColor('#FFFFFF')
+        }
         if (obj && obj.fontWeight === 'bold') setToggleBold(true)
         else {
             setToggleBold(false)
@@ -49,7 +63,32 @@ const TextProperties = () => {
             'text:changed': onSelectionChanged,
         });
     }, [objectStates])
-
+    const toggleShadow = (state)=>{
+        let obj = canvas.getActiveObject();
+        let shadow = {color: 'rgba(0, 0, 0, 1)', offsetX: 2, offsetY: 2, blur: 2, id: 6};
+        if(obj){
+            setShadow(state)
+            obj.set({isShadow:state})
+            obj.set({shadow:state?shadow:null})
+        }
+        canvas.renderAll()
+    }
+    const setOpacity = (val)=>{
+        let obj = canvas.getActiveObject();
+        if(obj && obj.shadow){
+            obj.shadow.blur = val/10;
+            canvas.renderAll()
+            setBlur(val)
+        }
+    }
+    const changeShadowColor = (e)=>{
+        let obj = canvas.getActiveObject();
+        if(obj && obj.shadow){
+            obj.shadow.color = e.target.value
+            setShadowColor(e.target.value)
+            canvas.renderAll()
+        }
+    }
     const onSelectionChanged = () => {
         var obj = canvas.getActiveObject();
         if (obj.selectionStart > -1) {
@@ -349,6 +388,33 @@ const TextProperties = () => {
                             </Form.Select>
                         </Col>
                     </Row>
+                    {objectStates.text &&  <Row>
+                        <Col>
+                            <span className="format_title">Shadow</span>
+                        </Col>
+                        <Col><BootstrapSwitchButton checked={isShadow} size="sm" onChange={(state)=>toggleShadow(state)}/></Col>
+                    </Row>}
+                    {
+                        isShadow && <><Row>
+                            <Col>
+                                <span className="format_title">Shadow Color</span>
+                            </Col>
+                            <Col>
+                                <div className="color_picker">
+                                    <input className="color_input" value={shadowColor} type="color" onChange={changeShadowColor}/>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <span className="format_title">Shadow Opacity</span>
+                            </Col>
+                            <Col>
+                                <input type="range" defaultValue={blur} value={blur} className="form-range" id="customRange1" step={10} onChange={(e)=>setOpacity(e.target.value)}/>
+                            </Col>
+                        </Row>
+                        </>
+                    }
                 </Container>
         </div>
     );
