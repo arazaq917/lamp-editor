@@ -308,7 +308,7 @@ const TextProperties = () => {
                     </Row>
                     <Row>
                         <Col>
-                            <span className="format_title">Justification</span>
+                            <span className="format_title">Justify</span>
                         </Col>
                         <Col>
                             <div className="lamp_text_alignment">

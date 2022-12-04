@@ -10,8 +10,6 @@ import Black from "../../../../assets/images/Black_Base.png";
 import Silver from "../../../../assets/images/Silver Base.png";
 import onlyShadow from "../../../../assets/images/shadow.png";
 
-import moreBtn from "../../../../assets/images/ButtonsImages/more.png";
-
 let COLORS = ["#141311", "#cccbc9", "#d6cfbf", "#ffffff", "#b4d7eb","#e25452","#add8a0","#ffe67f","#ff9b2c","#fed4e8","#0e3964","#26442c"]
 
 const ProductDetail =()=>{

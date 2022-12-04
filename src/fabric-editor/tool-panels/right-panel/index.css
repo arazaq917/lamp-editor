@@ -27,6 +27,10 @@
 .bg_purple {
     background-color: #6E6DD3 !important;
 }
+.properties_wrapper {
+    overflow-y: auto;
+    max-height: calc(100% - 230px);
+}
 .properties_wrapper > .container > .row{
     margin-top: 10px;
     padding-bottom: 10px;
@@ -78,4 +82,25 @@
 .carousel-control-next{
     right: 10px !important;
     opacity: 0.3 !important;
+}
+
+/* width */
+.properties_wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.properties_wrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+.properties_wrapper::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+    visibility:hidden;
+}
+.properties_wrapper:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
 }
