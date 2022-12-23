@@ -4,7 +4,7 @@
     height: 100%;
 }
 .fabric-editor-container{
-    height: calc(100% - 80px);
+    height: calc(100% - 60px);
 }
 .fabric-editor-pro{
     width: 100%;

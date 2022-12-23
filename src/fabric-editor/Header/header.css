@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
-    background-color: #002663;
+    height: 60px;
+    background-color: #2a343e;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-weight: 500;
@@ -24,13 +24,13 @@
 }
 
 .done-btn{
-    background: #25579d;
-    min-width: 140px;
+    background: #c38586;
+    min-width: 110px;
     font-size: 16px;
 }
 .done-btn:hover{
     color: #fff;
-    background: #14284d;
+    background: #BE7374;
 }
 .left-section{
     display: flex;
