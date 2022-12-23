@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/lamp-editor/static/css/main.d6d42a48.css",
+    "main.css": "/lamp-editor/static/css/main.748336e2.css",
     "main.js": "/lamp-editor/static/js/main.d15b220d.js",
     "static/js/260.916b5ea2.chunk.js": "/lamp-editor/static/js/260.916b5ea2.chunk.js",
     "static/js/636.9eedae6a.chunk.js": "/lamp-editor/static/js/636.9eedae6a.chunk.js",
@@ -133,11 +133,11 @@
     "static/media/rotate-right.png": "/lamp-editor/static/media/rotate-right.ced023ddfdba8f7df704.png",
     "static/media/flipRight.png": "/lamp-editor/static/media/flipRight.16508aa60273bf054ad5.png",
     "index.html": "/lamp-editor/index.html",
-    "main.d6d42a48.css.map": "/lamp-editor/static/css/main.d6d42a48.css.map",
+    "main.748336e2.css.map": "/lamp-editor/static/css/main.748336e2.css.map",
     "main.d15b220d.js.map": "/lamp-editor/static/js/main.d15b220d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6d42a48.css",
+    "static/css/main.748336e2.css",
     "static/js/main.d15b220d.js"
   ]
 }
