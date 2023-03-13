@@ -13,6 +13,7 @@ import {setCanvas, setImages, setObjectsState} from "../../actions";
 import {captureShots, createBounds} from "../../../utils/bounds";
 import WebFont from 'webfontloader'
 import CanvasZoom from "./canvasZoom";
+import LeftTabMenu from "../left-panel/left-tab-menu/LeftTabMenu";
 let canvas ,canvasVar,canvasDimensions, pitchContainerBox, containerDimensions;
 const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
     "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT", "Times New Roman",'Roboto' ]
@@ -31,7 +32,6 @@ const FabEditor =()=>{
         window.canvas = canvas;
         dispatch(setCanvas(canvas));
         stopEvents()
-        createBounds(canvas)
         canvas._historyInit();
         startEvents();
         canvas.renderAll()
@@ -209,19 +209,15 @@ const FabEditor =()=>{
     return (
         <div className="fabric-editor-container">
             <div className="editor-main-wrapper">
-                <FabEditorLeft />
+                <LeftTabMenu />
                 <div className="canvas-editor-wrapper">
-                    <ToolBaar canvas={canvasVar}/>
-                    <div className="canvas-right-wrapper">
+                    {/*<ToolBaar canvas={canvasVar}/>*/}
                         <div className={clsx("canvas-main-wrapper")}>
-                            <div className={`fabric-editor-pro center-content-column`}>
                                 <canvas id="canvas" width={1000} height={800}/>
-                            </div>
-                            <CanvasZoom/>
                         </div>
-                        <FabEditorRight/>
-                    </div>
                 </div>
+                <CanvasZoom/>
+                <FabEditorRight/>
             </div>
         </div>
     );

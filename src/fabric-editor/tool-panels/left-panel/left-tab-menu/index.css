@@ -1,9 +1,9 @@
 .editor-left-menu{
-    width: 20%;
+    width: 70px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #2a343e;
+    background-color: #1f2028;
 }
 .fab-icon-button{
     width: 100%;
@@ -13,11 +13,8 @@
     border-radius: 2px;
     text-align: center;
 }
-.selected_panel{
-    background: #BE7374
-}
 .fab-icon-button:hover{
-    background: #394754
+    background: #42434d
 }
 .center-content{
     display: flex;

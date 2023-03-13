@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import './index.css'
 import BackgroundPanel from "./BackgroundPanel";
-import TextPanel from "./TextPanel";
 import {useSelector} from "react-redux";
 import UploadFilePanel from "./uploadFile";
 import ProductDetail from "./ProductDetail";
@@ -21,9 +20,6 @@ const DrawsPanel =()=>{
             }
             {activeKey === '2' &&
                 <BackgroundImagePanel />
-            }
-            {activeKey === '3' &&
-                <TextPanel />
             }
             {activeKey === '4' &&
                 <UploadFilePanel/>

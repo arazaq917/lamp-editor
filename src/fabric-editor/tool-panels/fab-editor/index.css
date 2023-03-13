@@ -4,30 +4,20 @@
     height: 100%;
 }
 .fabric-editor-container{
-    height: calc(100% - 60px);
-}
-.fabric-editor-pro{
-    width: 100%;
-    height: calc(100% - 22px - 10px); /*10px is padding*/
+    height: calc(100% - 70px);
 }
 .canvas-main-wrapper{
-    width: 70%;
-    margin-left: 25px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 5px 0px;
-    overflow: auto;
 }
 .canvas-editor-wrapper{
-    width: 75%;
-}
-.canvas-right-wrapper{
+    flex: 1 1 auto;
     display: flex;
-    justify-content: space-between;
-    height: calc(100% - 70px);
-    background-color: rgb(249, 249, 249);
+    justify-content: center;
+    background-color: #f7f7f7;
 }
 .zoom_wrapper{
     display: flex;

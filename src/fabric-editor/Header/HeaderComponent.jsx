@@ -7,10 +7,10 @@ const HeaderComponent =()=>{
     return (
         <div className={"separate-section-baar"}>
             <div className="right-section">
-                <span className={"section-sperator-text"}>LAMP EDITOR</span>
+                <span className={"section-sperator-text"}>CANVAS EDITOR</span>
             </div>
             <div className="left-section">
-                <EditorButton customClass={'done-btn'} buttText={'Done'}/>
+                <EditorButton customClass={'done-btn'} buttText={'Save'}/>
             </div>
         </div>
     );

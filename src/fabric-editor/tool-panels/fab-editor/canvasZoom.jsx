@@ -60,15 +60,15 @@ const CanvasZoom = () => {
         canvas.renderAll();
     }
 
-    return(
-        <div className='zoom_wrapper'>
-            <span onClick={zoomOut}>
-                <img src={minus} height={20} width={20} />
-            </span>
-            <span onClick={zoomIn}>
-                <img style={{marginRight: '2px'}} src={plus} height={20} width={20}/>
-            </span>
-        </div>
-    )
+    // return(
+    //     // <div className='zoom_wrapper'>
+    //     //     <span onClick={zoomOut}>
+    //     //         <img src={minus} height={20} width={20} />
+    //     //     </span>
+    //     //     <span onClick={zoomIn}>
+    //     //         <img style={{marginRight: '2px'}} src={plus} height={20} width={20}/>
+    //     //     </span>
+    //     // </div>
+    // )
 }
 export default CanvasZoom

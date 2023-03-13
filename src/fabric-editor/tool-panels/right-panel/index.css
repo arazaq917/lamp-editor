@@ -1,6 +1,6 @@
 .editor-right-panel{
-    width: 25%;
-    padding: 10px;
+    flex: 0 0 250px;
+    padding: 5px;
     background-color: #fff;
     border-left: 1px solid var(--super-light-gray-2);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
