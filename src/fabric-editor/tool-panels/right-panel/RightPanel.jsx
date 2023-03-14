@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import './index.css'
 import {useSelector} from "react-redux";
 import TextProperties from "./TextProperties";
+import ImageProperties from "./ImageProperties";
 const RightPanel =({img})=>{
     const objectState = useSelector(state => state.canvasObjectStates)
     const images = useSelector(state => state.images)
