@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import './index.css'
 import circle from '../../../../assets/images/icons/circle.png';
 import rectangular from '../../../../assets/images/icons/rectangular.png';
@@ -8,12 +8,11 @@ import TextImg from '../../../../assets/images/icons/text.png';
 import square from '../../../../assets/images/icons/square.png';
 import uploadImage from '../../../../assets/images/icons/image.png';
 import line from '../../../../assets/images/icons/line.png';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {fabric} from "fabric";
 
 const LeftTabMenu =()=>{
-    const dispatch = useDispatch()
-    const [index, setIndex] = useState('1');
+    const canvas = useSelector(state => state.canvas)
     const inputRef = useRef()
     const addText = () => {
         let text = new fabric.IText('Hello There',{
@@ -206,29 +205,29 @@ const LeftTabMenu =()=>{
 
     return (
         <div className="editor-left-menu">
-            <div ref={inputRef} className={`fab-icon-button ${index === '3' ? 'selected_panel' : ''}`} onClick={addText}>
+            <div ref={inputRef} className={`fab-icon-button`} onClick={addText}>
                 <img src={TextImg} height={35} width={35}/>
             </div>
-            <div className={`fab-icon-button ${index === '4' ? 'selected_panel' : ''}`} onClick={uploadFile}>
+            <div className={`fab-icon-button`} onClick={uploadFile}>
                 <input className="d_none" type="file" onChange={uploadFileHandler} name="files" onClick={(e)=>{e.target.value = null}}  ref={inputRef} />
                 <img src={uploadImage} height={35} width={35}/>
             </div>
-            <div className={`fab-icon-button ${index === '5' ? 'selected_panel' : ''}`} onClick={()=>{addShapes('circle')}}>
+            <div className={`fab-icon-button`} onClick={()=>{addShapes('circle')}}>
                 <img src={circle} height={35} width={35}/>
             </div>
-            <div className={`fab-icon-button ${index === '5' ? 'selected_panel' : ''}`} onClick={()=>{addShapes('rect')}}>
+            <div className={`fab-icon-button`} onClick={()=>{addShapes('rect')}}>
                 <img src={rectangular} height={35} width={35}/>
             </div>
-            <div className={`fab-icon-button ${index === '5' ? 'selected_panel' : ''}`} onClick={()=>{addShapes('square')}}>
+            <div className={`fab-icon-button`} onClick={()=>{addShapes('square')}}>
                 <img src={square} height={35} width={35}/>
             </div>
-            <div className={`fab-icon-button ${index === '5' ? 'selected_panel' : ''}`} onClick={()=>{addShapes('triangle')}}>
+            <div className={`fab-icon-button`} onClick={()=>{addShapes('triangle')}}>
                 <img src={triangle} height={35} width={35}/>
             </div>
-            <div className={`fab-icon-button ${index === '5' ? 'selected_panel' : ''}`} onClick={()=>{addShapes('polygon')}}>
+            <div className={`fab-icon-button`} onClick={()=>{addShapes('polygon')}}>
                 <img src={pentagon} height={35} width={35}/>
             </div>
-            <div className={`fab-icon-button ${index === '5' ? 'selected_panel' : ''}`} onClick={()=>{addShapes('line')}}>
+            <div className={`fab-icon-button`} onClick={()=>{addShapes('line')}}>
                 <img src={line} height={35} width={35}/>
             </div>
         </div>

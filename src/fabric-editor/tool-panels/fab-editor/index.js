@@ -1,25 +1,33 @@
 import React, {useEffect, useState} from "react";
 import {fabric} from 'fabric';
 import './index.css'
-import {initCenteringGuidelines, initAligningGuidelines} from '../../../utils/object-snapping'
-import {drawObjectDimentions, getCanvas} from '../../../utils/utils'
-import ToolBaar from "../../tool-baar/ToolBaar";
+import {getCanvas} from '../../../utils/utils'
 import 'fabric-history';
 import clsx from "clsx";
-import FabEditorLeft from '../left-panel/LeftPanel';
 import FabEditorRight from '../right-panel/RightPanel'
 import {useDispatch} from "react-redux";
 import {setCanvas, setImages, setObjectsState} from "../../actions";
-import {captureShots, createBounds} from "../../../utils/bounds";
+import {captureShots} from "../../../utils/bounds";
 import WebFont from 'webfontloader'
 import CanvasZoom from "./canvasZoom";
 import LeftTabMenu from "../left-panel/left-tab-menu/LeftTabMenu";
-let canvas ,canvasVar,canvasDimensions, pitchContainerBox, containerDimensions;
-const arrayFonts = ["Acme", "Akshar"   , "Artifika","Comic Neue","Courier Prime","EB Garamond","Just Another Hand",
-    "Black Han Sans" ,"Montserrat", "Playball" , "Poppins" , " Ultra" , "Smythe" , " Rock Salt","Brush Script MT", "Times New Roman",'Roboto' ]
-const FabEditor =()=>{
+import ToolBaar from "../../tool-baar/ToolBaar";
+
+let canvas, canvasDimensions, pitchContainerBox, containerDimensions;
+const arrayFonts = ["Acme", "Akshar", "Artifika", "Comic Neue", "Courier Prime", "EB Garamond", "Just Another Hand",
+    "Black Han Sans", "Montserrat", "Playball", "Poppins", " Ultra", "Smythe", " Rock Salt", "Brush Script MT", "Times New Roman", 'Roboto']
+const FabEditor = () => {
     const dispatch = useDispatch()
-    const [img,setImg] = useState([{name:'',url:''},{name:'',url:''},{name:'',url:''},{name:'',url:''}])
+    fabric.util.object.extend(fabric.Object.prototype, {
+        setBoundingBox(prop, val) {
+            const bbox = this.getBoundingRect(1, 1);
+            this.set(prop, (this[prop] - bbox[prop]) + val);
+            this.setCoords();
+        },
+        getObjectArea() {
+            return (this.getBoundingRect(true, true).width * this.getBoundingRect(true, true).height);
+        },
+    });
     useEffect(() => {
         pitchContainerBox = document.querySelector(".canvas-main-wrapper")
         if (!pitchContainerBox) return;
@@ -36,7 +44,7 @@ const FabEditor =()=>{
         startEvents();
         canvas.renderAll()
         loadGoogleFonts(arrayFonts)
-    },[]);
+    }, []);
 
     const loadGoogleFonts = (fontFamily) => {
         WebFont.load({
@@ -45,27 +53,27 @@ const FabEditor =()=>{
             }
         });
     }
-    const startEvents = ()=>{
+    const startEvents = () => {
         canvas.on({
             'selection:created': selectionCreated,
             'selection:updated': selectionUpdated,
             'selection:cleared': selectionCleared,
-            'object:added':objectAdded,
-            'object:modified':objectModified,
-            'history:undo':historyUndo,
-            'history:redo':historyRedo,
-            'history:append':historyAppend
+            'object:added': objectAdded,
+            'object:modified': objectModified,
+            'history:undo': historyUndo,
+            'history:redo': historyRedo,
+            'history:append': historyAppend
         })
     }
-    const stopEvents = ()=>{
+    const stopEvents = () => {
         canvas.__eventListeners = {}
     }
-    const updateImages = (images)=>{
-        let img1 = images.find(f=>f.name === 'rect1')
-        let img2 = images.find(f=>f.name === 'rect2')
-        let img3 = images.find(f=>f.name === 'rect3')
-        let img4 = images.find(f=>f.name === 'rect4')
-        dispatch(setImages([img1,img2,img3,img4]))
+    const updateImages = (images) => {
+        let img1 = images.find(f => f.name === 'rect1')
+        let img2 = images.find(f => f.name === 'rect2')
+        let img3 = images.find(f => f.name === 'rect3')
+        let img4 = images.find(f => f.name === 'rect4')
+        dispatch(setImages([img1, img2, img3, img4]))
     }
     fabric.Object.prototype.transparentCorners = false;
     fabric.Object.prototype.cornerColor = 'blue';
@@ -127,8 +135,7 @@ const FabEditor =()=>{
             let ratio = 1.40
             height = window.innerHeight;
             width = height * ratio
-        }
-        else {
+        } else {
             let ratio = 1.40
             height = window.innerHeight - 250;
             width = height * ratio
@@ -139,68 +146,79 @@ const FabEditor =()=>{
             height: height,
         }
     }
-    const historyUndo = (e)=>{
+    const historyUndo = (e) => {
     }
-    const historyRedo = (e)=>{
+    const historyRedo = (e) => {
     }
-    const historyAppend = (e)=>{
+    const historyAppend = (e) => {
     }
 
-    const objectModified=(e)=>{
-        if(e.target){
-            captureShots(canvas,updateImages)
+    const objectModified = (e) => {
+        if (e.target) {
+            captureShots(canvas, updateImages)
         }
     }
-    const objectAdded = (e)=>{
-        if(e.target){
-            if(e.target.name && (!e.target.name.includes('Rect'))){
+    const objectAdded = (e) => {
+        if (e.target) {
+            if (e.target.name && (!e.target.name.includes('Rect'))) {
                 canvas.sendToBack(e.target);
                 canvas.renderAll();
             }
         }
     }
     const selectionCreated = (e) => {
-        captureShots(canvas,updateImages)
+        captureShots(canvas, updateImages)
         let object = e.target
-        if(!object)return
+        if (!object) return
         updateObjectsStates(object)
     }
-    const selectionUpdated=(e)=>{
+    const selectionUpdated = (e) => {
         updateObjectsStates(e.target)
     }
-    const selectionCleared=(e)=>{
-        updateObjectsStates({ name: "clear" })
+    const selectionCleared = (e) => {
+        updateObjectsStates({name: "clear"})
     }
     const updateObjectsStates = (object) => {
         let obj;
         if (object.name === "text") {
             obj = {
-                image:false,
+                shape: false,
+                image: false,
                 objectActive: true,
                 text: true,
-                activeSelection:false
+                activeSelection: false
             }
         } else if (object.name === "clear") {
             obj = {
-                image:false,
+                shape: false,
+                image: false,
                 objectActive: false,
                 text: false,
-                activeSelection:false
+                activeSelection: false
             }
         } else if (object.name === "image") {
             obj = {
-                image:true,
+                shape: false,
+                image: true,
                 objectActive: true,
                 text: false,
-                activeSelection:false
+                activeSelection: false
             }
-        }
-        else {
+        } else if (object.name === "shape") {
             obj = {
-                image:false,
+                shape: true,
+                image: false,
                 objectActive: true,
                 text: false,
-                activeSelection:false
+                activeSelection: false
+            }
+        } else {
+            obj = {
+                shape: false,
+                image: false,
+                objectActive: true,
+                text: false,
+                activeSelection: false
             }
         }
         dispatch(setObjectsState(obj))
@@ -209,12 +227,15 @@ const FabEditor =()=>{
     return (
         <div className="fabric-editor-container">
             <div className="editor-main-wrapper">
-                <LeftTabMenu />
+                <LeftTabMenu/>
                 <div className="canvas-editor-wrapper">
                     {/*<ToolBaar canvas={canvasVar}/>*/}
-                        <div className={clsx("canvas-main-wrapper")}>
-                                <canvas id="canvas" width={1000} height={800}/>
-                        </div>
+                    <div className={clsx("canvas-main-wrapper")}>
+                        <canvas id="canvas" width={1000} height={800}/>
+                    </div>
+                    <div className='canvas-props'>
+                        <ToolBaar/>
+                    </div>
                 </div>
                 <CanvasZoom/>
                 <FabEditorRight/>

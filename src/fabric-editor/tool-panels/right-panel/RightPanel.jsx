@@ -3,17 +3,19 @@ import './index.css'
 import {useSelector} from "react-redux";
 import TextProperties from "./TextProperties";
 import ImageProperties from "./ImageProperties";
-const RightPanel =({img})=>{
+import CommonProps from "./commonProps";
+
+const RightPanel = () => {
     const objectState = useSelector(state => state.canvasObjectStates)
-    const images = useSelector(state => state.images)
-    const previewStyle = useSelector(state => state.previewSwitch)
-    useEffect(()=>{
-        console.log("objectState",objectState)
-        console.log('RightPanel',images)
-    },[objectState,images])
+    useEffect(() => {
+        console.log("objectState", objectState)
+    }, [objectState])
 
     return (
         <div className="editor-right-panel">
+            {objectState.objectActive &&
+                <CommonProps/>
+            }
             {
                 objectState.text &&
                     <TextProperties/>

@@ -40,3 +40,8 @@
 .zoom_wrapper span:hover{
     background-color: #8f8f8f;
 }
+.canvas-props{
+    position: absolute;
+    left: 75px;
+    bottom: 5px;
+}
