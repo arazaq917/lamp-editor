@@ -167,7 +167,6 @@ const FabEditor = () => {
         }
     }
     const selectionCreated = (e) => {
-        captureShots(canvas, updateImages)
         let object = e.target
         if (!object) return
         updateObjectsStates(object)

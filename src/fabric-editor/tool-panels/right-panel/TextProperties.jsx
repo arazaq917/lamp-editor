@@ -388,33 +388,6 @@ const TextProperties = () => {
                             </Form.Select>
                         </Col>
                     </Row>
-                    {objectStates.text &&  <Row>
-                        <Col>
-                            <span className="format_title">Shadow</span>
-                        </Col>
-                        <Col><BootstrapSwitchButton checked={isShadow} size="sm" onChange={(state)=>toggleShadow(state)}/></Col>
-                    </Row>}
-                    {
-                        isShadow && <><Row>
-                            <Col>
-                                <span className="format_title">Shadow Color</span>
-                            </Col>
-                            <Col>
-                                <div className="color_picker">
-                                    <input className="color_input" value={shadowColor} type="color" onChange={changeShadowColor}/>
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <span className="format_title">Shadow Opacity</span>
-                            </Col>
-                            <Col>
-                                <input type="range" defaultValue={blur} value={blur} className="form-range" id="customRange1" step={10} onChange={(e)=>setOpacity(e.target.value)}/>
-                            </Col>
-                        </Row>
-                        </>
-                    }
                 </Container>
         </div>
     );

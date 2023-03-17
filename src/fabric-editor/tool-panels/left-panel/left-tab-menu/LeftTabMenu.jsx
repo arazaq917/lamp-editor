@@ -100,8 +100,8 @@ const LeftTabMenu =()=>{
                     left: 10,
                     width: 175,
                     height: 100,
-                    fill: '',
-                    stroke: 'blue',
+                    fill: '#c59b9b',
+                    name:'shape',
                 });
                 canvas.add(rec);
                 canvas.setActiveObject(rec)
@@ -113,8 +113,8 @@ const LeftTabMenu =()=>{
                     left: 10,
                     width: 100,
                     height: 100,
-                    fill: '',
-                    stroke: 'blue',
+                    fill: '#c59b9b',
+                    name:'shape',
                 });
                 canvas.add(rec);
                 canvas.setActiveObject(rec)
@@ -125,8 +125,8 @@ const LeftTabMenu =()=>{
                     top: 10,
                     left: 100,
                     radius: 50,
-                    fill: '',
-                    stroke: 'blue',
+                    fill: '#c59b9b',
+                    name:'shape',
                     strokeWidth: 2
                 });
                 canvas.add(cir);
@@ -139,8 +139,8 @@ const LeftTabMenu =()=>{
                     left: 200,
                     width: 200,
                     height: 100,
-                    fill: '',
-                    stroke: 'blue',
+                    fill: '#c59b9b',
+                    name:'shape',
                     strokeWidth: 2
                 });
                 canvas.add(tri);
@@ -182,8 +182,8 @@ const LeftTabMenu =()=>{
                 var polyg = new fabric.Polygon(shape[1], {
                     top: 180,
                     left: 200,
-                    fill: '',
-                    stroke: 'blue',
+                    fill: '#c59b9b',
+                    name:'shape',
                     strokeWidth: 2
                 });
                 canvas.add(polyg);
@@ -192,7 +192,7 @@ const LeftTabMenu =()=>{
                 break;
             case 'line':
                 var line = new fabric.Line([50, 10, 200, 150], {
-                    stroke: 'black'
+                    name:'shape',
                 });
                 canvas.add(line)
                 canvas.setActiveObject(line)

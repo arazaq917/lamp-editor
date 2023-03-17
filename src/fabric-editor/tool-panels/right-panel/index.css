@@ -1,6 +1,6 @@
 .editor-right-panel{
     flex: 0 0 250px;
-    padding: 5px;
+    padding: 10px;
     background-color: #fff;
     border-left: 1px solid var(--super-light-gray-2);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -113,13 +113,57 @@
     justify-content: center;
     align-items: center;
 }
-
+.solid-divider{
+    border-top: 1px solid #bbb;
+    margin: 0.8rem 0;
+}
 .layer-icon{
     height: 12px;
     width: 7px;
     padding: 0px !important;
 }
+.gnr-input-color-wrapper {
+    display: flex;
+    margin-top: 5px;
+}
+.color-input{
+    height: 30px;
+    width: 65px;
+    margin-right: 10px;
+}
+.color-code{
+    flex-grow: 1;
+    padding: 5px 5px 5px 10px;
+    font-size: 12px;
+    color: #000;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.opacity-number{
+    padding: 4px;
+    width: 64px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 12px;
 
+}
+.opacity-scroller > .form-range{
+    width: 150px !important;
+}
+.gnr-input-color-wrapper > .btn-outline-light{
+    color: #555555 !important;
+    border-color: #555555 !important;
+    padding: 5px 35px;
+}
+.gnr-input-color-wrapper > .btn-outline-light:hover{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px !important;
+}
 /* width */
 .properties_wrapper::-webkit-scrollbar {
     width: 5px;
