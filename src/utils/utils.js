@@ -757,13 +757,12 @@ export const getCanvas=(containerDimensions)=>{
     return canvas;
 }
 
-export const canvasBackgroundImage = (url, type, canvas, callback, images) => {
+export const canvasBackgroundImage = (url, type, canvas) => {
     import(`../assets/images/SportsImages/largeImages/${url}.${type}`).then(srcSprite => {
         let img = new Image();
         img.onload = function () {
             canvas.setBackgroundImage(img.currentSrc, () => {
                 canvas.requestRenderAll();
-                callback && callback(canvas, images)
             }, {
                 name:url,
                 left:canvas.width/2,

@@ -7,7 +7,7 @@ import undoImg from "../../assets/images/undo.png";
 import "fabric-history";
 import {useSelector} from "react-redux";
 import {fabric} from "fabric";
-const optionsToAdd = ['id', 'name'];
+const optionsToAdd = ['id', 'name', 'sub_type'];
 
 const ToolBaar =()=>{
     const canvas = useSelector(state => state.canvas)

@@ -5,6 +5,7 @@ import rectangular from '../../../../assets/images/icons/rectangular.png';
 import triangle from '../../../../assets/images/icons/triangle.png';
 import pentagon from '../../../../assets/images/icons/pentagon.png';
 import TextImg from '../../../../assets/images/icons/text.png';
+import DrawImg from '../../../../assets/images/icons/pencil.png';
 import square from '../../../../assets/images/icons/square.png';
 import uploadImage from '../../../../assets/images/icons/image.png';
 import line from '../../../../assets/images/icons/line.png';
@@ -193,6 +194,8 @@ const LeftTabMenu =()=>{
             case 'line':
                 var line = new fabric.Line([50, 10, 200, 150], {
                     name:'shape',
+                    stroke: 'red',
+                    sub_type: 'line'
                 });
                 canvas.add(line)
                 canvas.setActiveObject(line)
@@ -203,6 +206,17 @@ const LeftTabMenu =()=>{
         }
     }
 
+    const drawCanvas = () => {
+        if(canvas.isDrawingMode){
+            canvas.isDrawingMode = false
+            canvas.renderAll()
+            canvas.discardActiveObject();
+        }else{
+            canvas.isDrawingMode = true
+            canvas.renderAll()
+            canvas.discardActiveObject();
+        }
+    }
     return (
         <div className="editor-left-menu">
             <div ref={inputRef} className={`fab-icon-button`} onClick={addText}>
@@ -229,6 +243,9 @@ const LeftTabMenu =()=>{
             </div>
             <div className={`fab-icon-button`} onClick={()=>{addShapes('line')}}>
                 <img src={line} height={35} width={35}/>
+            </div>
+            <div className={`fab-icon-button`} onClick={drawCanvas}>
+                <img src={DrawImg} height={35} width={35}/>
             </div>
         </div>
     );

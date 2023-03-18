@@ -203,7 +203,7 @@ const FabEditor = () => {
                 text: false,
                 activeSelection: false
             }
-        } else if (object.name === "shape") {
+        } else if (object.name === "shape" || object.type === 'path') {
             obj = {
                 shape: true,
                 image: false,

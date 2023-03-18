@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
     AlignHorizontalObject, AlignVerticalObject, ArrowBackwardIcon, ArrowDownIcon, ArrowFrontIcon, ArrowUpIcon,
     BottomAlignIcon,
-    LeftAlignIcon,
+    LeftAlignIcon, LockIcon,
     RightAlignIcon,
     TopAlignIcon
 } from "../../../assets/images/icons/icons";
@@ -10,6 +10,16 @@ import {useSelector} from "react-redux";
 
 const CommonProps = () => {
     const canvas = useSelector(state => state.canvas)
+    const [lockObj, setLockObj] = useState(false);
+
+    useEffect(()=>{
+        let object = canvas?.getActiveObject()
+        if(object.lockMovementX){
+            setLockObj(true)
+        }else{
+            setLockObj(false)
+        }
+    },[canvas?.getActiveObject()])
 
     const alignSingleObject = (alignment, fabricObject = canvas.getActiveObject()) => {
         // Get the canvas and the current zoom level
@@ -68,6 +78,21 @@ const CommonProps = () => {
         const activeObject = canvas.getActiveObject();
         if (activeObject) {
             canvas.bringToFront(activeObject);
+        }
+        canvas.renderAll();
+    };
+    const lockObject = () => {
+        const activeObject = canvas.getActiveObject();
+        if (activeObject) {
+            if(lockObj){
+                activeObject.lockMovementX = false;
+                activeObject.lockMovementY = false;
+                setLockObj(false)
+            }else{
+                activeObject.lockMovementX = true;
+                activeObject.lockMovementY = true;
+                setLockObj(true)
+            }
         }
         canvas.renderAll();
     };
@@ -130,9 +155,9 @@ const CommonProps = () => {
                                     fill="#000"
                                 />
                             </span>
-                        <span className='layering-icons'>
-                                <AlignVerticalObject
-                                    fill="#000"
+                        <span className='layering-icons' onClick={lockObject}>
+                                <LockIcon
+                                    fill={lockObj ? '#ad3333' : '#000'}
                                 />
                             </span>
                     </ul>
