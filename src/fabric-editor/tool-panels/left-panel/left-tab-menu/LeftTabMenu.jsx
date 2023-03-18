@@ -21,7 +21,7 @@ const LeftTabMenu =()=>{
             top:200,
             fontSize:35,
             name: 'text',
-            fill:'black',
+            fill:'#000',
             originX:'center',
             originY:'center',
             fontFamily: 'Roboto',

@@ -96,7 +96,18 @@ const CommonProps = () => {
         }
         canvas.renderAll();
     };
-
+    const centerObjectVertical = () => {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        canvas.centerObjectV(obj);
+        canvas.renderAll();
+    };
+    const centerObjectHorizontal = () => {
+        const obj = canvas.getActiveObject();
+        if (!obj) return;
+        canvas.centerObjectH(obj);
+        canvas.renderAll();
+    };
     return(
         <div
             style={{fontSize: '14px'}}
@@ -125,12 +136,12 @@ const CommonProps = () => {
                                 fill="#000"
                             />
                         </li>
-                        <li onClick={() => alignSingleObject('bottom')} className="list-group-item">
+                        <li onClick={centerObjectHorizontal} className="list-group-item">
                             <AlignHorizontalObject
                                 fill="#000"
                             />
                         </li>
-                        <li onClick={() => alignSingleObject('bottom')} className="list-group-item">
+                        <li onClick={centerObjectVertical} className="list-group-item">
                             <AlignVerticalObject
                                 fill="#000"
                             />
