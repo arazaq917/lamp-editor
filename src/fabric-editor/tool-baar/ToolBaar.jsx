@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.css'
-import { Tooltip } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import redoImg from "../../assets/images/forward.png";
 import undoImg from "../../assets/images/undo.png";
 import "fabric-history";
 import {useSelector} from "react-redux";
-import {fabric} from "fabric";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 const optionsToAdd = ['id', 'name', 'sub_type'];
 
 const ToolBaar =()=>{
@@ -64,26 +65,22 @@ const ToolBaar =()=>{
     return (
         <div className={`toolbaar-container`}>
             <div className="canvas-tools">
-                <Button variant="outline-light" onClick={undo}>
-                    <span>
+                <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Undo</Tooltip>}>
+                    <Button variant="outline-light" onClick={undo}>
                         <img src={undoImg} height={25} width={25}/>
-                    </span>
-                </Button>
-                <Button variant="outline-light" onClick={redo}>
-                    <span>
+                    </Button>
+                </OverlayTrigger>
+                <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Redo</Tooltip>}>
+                    <Button variant="outline-light" onClick={redo}>
                         <img src={redoImg} height={25} width={25}/>
-                    </span>
-                </Button>
-                <Button variant="outline-light" onClick={duplicateObject}>
-                    <span>
-                        Duplicate
-                    </span>
-                </Button>
-                <Button variant="outline-light" onClick={deleteObject}>
-                    <span>
-                        Delete
-                    </span>
-                </Button>
+                    </Button>
+                </OverlayTrigger>
+                <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Duplicate</Tooltip>}>
+                    <Button variant="outline-light" onClick={duplicateObject}>Duplicate</Button>
+                </OverlayTrigger>
+                <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Delete</Tooltip>}>
+                    <Button variant="outline-light" onClick={deleteObject}>Delete</Button>
+                </OverlayTrigger>
 
             </div>
         </div>

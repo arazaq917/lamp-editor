@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {fabric} from 'fabric';
 import './index.css'
 import {getCanvas} from '../../../utils/utils'
@@ -6,8 +6,7 @@ import 'fabric-history';
 import clsx from "clsx";
 import FabEditorRight from '../right-panel/RightPanel'
 import {useDispatch} from "react-redux";
-import {setCanvas, setImages, setObjectsState} from "../../actions";
-import {captureShots} from "../../../utils/bounds";
+import {setCanvas, setObjectsState} from "../../actions";
 import WebFont from 'webfontloader'
 import CanvasZoom from "./canvasZoom";
 import LeftTabMenu from "../left-panel/left-tab-menu/LeftTabMenu";
@@ -23,9 +22,6 @@ const FabEditor = () => {
             const bbox = this.getBoundingRect(1, 1);
             this.set(prop, (this[prop] - bbox[prop]) + val);
             this.setCoords();
-        },
-        getObjectArea() {
-            return (this.getBoundingRect(true, true).width * this.getBoundingRect(true, true).height);
         },
     });
     useEffect(() => {
@@ -68,13 +64,7 @@ const FabEditor = () => {
     const stopEvents = () => {
         canvas.__eventListeners = {}
     }
-    const updateImages = (images) => {
-        let img1 = images.find(f => f.name === 'rect1')
-        let img2 = images.find(f => f.name === 'rect2')
-        let img3 = images.find(f => f.name === 'rect3')
-        let img4 = images.find(f => f.name === 'rect4')
-        dispatch(setImages([img1, img2, img3, img4]))
-    }
+
     fabric.Object.prototype.transparentCorners = false;
     fabric.Object.prototype.cornerColor = 'blue';
     fabric.Object.prototype.cornerStyle = 'circle';
@@ -154,17 +144,8 @@ const FabEditor = () => {
     }
 
     const objectModified = (e) => {
-        if (e.target) {
-            captureShots(canvas, updateImages)
-        }
     }
     const objectAdded = (e) => {
-        if (e.target) {
-            if (e.target.name && (!e.target.name.includes('Rect'))) {
-                canvas.sendToBack(e.target);
-                canvas.renderAll();
-            }
-        }
     }
     const selectionCreated = (e) => {
         let object = e.target
@@ -228,7 +209,6 @@ const FabEditor = () => {
             <div className="editor-main-wrapper">
                 <LeftTabMenu/>
                 <div className="canvas-editor-wrapper">
-                    {/*<ToolBaar canvas={canvasVar}/>*/}
                     <div className={clsx("canvas-main-wrapper")}>
                         <canvas id="canvas" width={1000} height={800}/>
                     </div>
@@ -236,7 +216,7 @@ const FabEditor = () => {
                         <ToolBaar/>
                     </div>
                 </div>
-                <CanvasZoom/>
+                {/*<CanvasZoom/>*/}
                 <FabEditorRight/>
             </div>
         </div>

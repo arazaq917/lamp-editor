@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Form from 'react-bootstrap/Form';
 const ShapeProps = () => {
     const [shapeColor, setShapeColor] = useState('')
-    const [shapeOpacity, setShapeOpacity] = useState(100)
 
     useEffect(()=>{
         let object = canvas?.getActiveObject()
@@ -15,7 +14,6 @@ const ShapeProps = () => {
             else{
                 setShapeColor(object.fill)
             }
-            setShapeOpacity(object.opacity*100)
         }
     },[canvas?.getActiveObject()])
 
@@ -61,16 +59,6 @@ const ShapeProps = () => {
                     <span className='color-code'>
                         {shapeColor}
                     </span>
-                </div>
-            </div>
-            <hr className="solid-divider" />
-            <div className='d-flex flex-column'>
-                <Form.Label>Range</Form.Label>
-                <div className='d-flex opacity-scroller justify-content-between'>
-                    <Form.Range onChange={changeOpacity} value={shapeOpacity} />
-                    <span className='opacity-number'>
-                        {(shapeOpacity).toFixed(0)} %
-                </span>
                 </div>
             </div>
         </div>

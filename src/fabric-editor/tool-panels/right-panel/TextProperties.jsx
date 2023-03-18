@@ -9,6 +9,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from 'react-bootstrap/Form';
+import Tooltip from "react-bootstrap/Tooltip";
+import Button from "react-bootstrap/Button";
+import undoImg from "../../../assets/images/undo.png";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 const arrayFonts = ["Dennis Hill Speeding", "Acme", "Akshar", "Artifika", "Comic Neue", "Courier Prime", "EB Garamond", "Just Another Hand",
     "Black Han Sans", "Montserrat", "Playball", "Poppins", " Ultra", "Smythe", " Rock Salt", "Brush Script MT", "Times New Roman", 'Roboto']
@@ -305,15 +309,21 @@ const TextProperties = () => {
                     </Col>
                     <Col>
                         <div className="lamp_text_props">
-                            <button className={`buttons_style ${toggleBold ? 'bg_purple' : ''}`}
-                                    onClick={() => textProperty('bold')}>B
-                            </button>
-                            <button className={`buttons_style italic_btn ${toggleItalic ? 'bg_purple' : ''}`}
-                                    onClick={() => textProperty('italic')}>I
-                            </button>
-                            <button className={`buttons_style underline_btn ${toggleUnderline ? 'bg_purple' : ''}`}
-                                    onClick={() => textProperty('underline')}>U
-                            </button>
+                            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Bold</Tooltip>}>
+                                <button className={`buttons_style ${toggleBold ? 'bg_purple' : ''}`}
+                                        onClick={() => textProperty('bold')}>B
+                                </button>
+                            </OverlayTrigger>
+                            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Italic</Tooltip>}>
+                                <button className={`buttons_style italic_btn ${toggleItalic ? 'bg_purple' : ''}`}
+                                        onClick={() => textProperty('italic')}>I
+                                </button>
+                            </OverlayTrigger>
+                            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Underline</Tooltip>}>
+                                <button className={`buttons_style underline_btn ${toggleUnderline ? 'bg_purple' : ''}`}
+                                        onClick={() => textProperty('underline')}>U
+                                </button>
+                            </OverlayTrigger>
                         </div>
                     </Col>
                 </Row>
@@ -324,18 +334,24 @@ const TextProperties = () => {
                     </Col>
                     <Col>
                         <div className="lamp_text_alignment">
-                            <button className={`buttons_style ${changeAlign === 'left' ? 'bg_purple' : ''}`}
-                                    onClick={() => changeAlignment('left')}>
-                                <img src={leftAlign} alt="left" height={20} width={20}/>
-                            </button>
-                            <button className={`buttons_style ${changeAlign === 'center' ? 'bg_purple' : ''}`}
-                                    onClick={() => changeAlignment('center')}>
-                                <img src={centreAlign} alt="left" height={20} width={20}/>
-                            </button>
-                            <button className={`buttons_style ${changeAlign === 'right' ? 'bg_purple' : ''}`}
-                                    onClick={() => changeAlignment('right')}>
-                                <img src={rightAlign} alt="left" height={20} width={20}/>
-                            </button>
+                            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Left</Tooltip>}>
+                                <button className={`buttons_style ${changeAlign === 'left' ? 'bg_purple' : ''}`}
+                                        onClick={() => changeAlignment('left')}>
+                                    <img src={leftAlign} alt="left" height={20} width={20}/>
+                                </button>
+                            </OverlayTrigger>
+                            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Center</Tooltip>}>
+                                <button className={`buttons_style ${changeAlign === 'center' ? 'bg_purple' : ''}`}
+                                        onClick={() => changeAlignment('center')}>
+                                    <img src={centreAlign} alt="left" height={20} width={20}/>
+                                </button>
+                            </OverlayTrigger>
+                            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Right</Tooltip>}>
+                                <button className={`buttons_style ${changeAlign === 'right' ? 'bg_purple' : ''}`}
+                                        onClick={() => changeAlignment('right')}>
+                                    <img src={rightAlign} alt="left" height={20} width={20}/>
+                                </button>
+                            </OverlayTrigger>
                         </div>
                     </Col>
                 </Row>

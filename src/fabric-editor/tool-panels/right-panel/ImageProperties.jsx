@@ -121,6 +121,7 @@ const ImageProperties = () => {
                         </div>
                     </Col>
                 </Row>
+                <hr className="solid-divider"/>
                 <Row>
                     <Col>
                         <span className="format_title">Scale</span>
@@ -136,6 +137,7 @@ const ImageProperties = () => {
                         </div>
                     </Col>
                 </Row>
+                <hr className="solid-divider"/>
                 <Row>
                     <Col>
                         <span className="format_title">Rotate</span>
@@ -151,6 +153,7 @@ const ImageProperties = () => {
                         </div>
                     </Col>
                 </Row>
+                <hr className="solid-divider"/>
                 <Row>
                     <Col>
                         <span className="format_title">Flip</span>
